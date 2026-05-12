@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>todoto alimtalk — 케이스 스터디</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="case-nav">
+  <a href="alimtalk.html" class="active">alimtalk</a>
+  <a href="hub.html">hub</a>
+  <a href="landing.html">landing</a>
+  <a href="sns.html">sns</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="brand-tag">todoto alimtalk · case study</div>
+    <h1>1인 브랜드의 카카오 알림톡을<br><em>카피·검수·발송</em> 한 흐름으로</h1>
+    <p class="sub">5개 도구를 1개 화면으로. 알림톡 글 작성부터 발송·노션 결과 정리까지 한 번에.</p>
+    <ul class="bullets">
+      <li>구독제 AI로 만들어 — 매번 호출 비용 0</li>
+      <li>알림톡·친구톡 8가지 형식을 각각 자동화</li>
+      <li>카카오 검수 신청도 한 번 클릭으로</li>
+      <li>발송 결과는 노션에 자동으로 정리</li>
+    </ul>
+    <a href="#step-01" class="cta">전체 스토리 보기 →</a>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <h2>5개 도구 → <em>1개 흐름</em></h2>
+    <p>워크샵 1번 알림톡 보내려고 노션·ChatGPT·솔라피·스티비·탈리를 오가던 운영자가, 한 화면에서 글 만들고·검수 받고·발송하고·노션 결과까지 정리하게 된 이야기.</p>
+  </div>
+</section>
+
+<section class="step" id="step-01">
+  <div class="container">
+    <div class="step-num">01</div>
+    <h2 class="step-title">왜 만들었나</h2>
+    <p class="step-sub">1인 브랜드 운영자의 5개 도구 분산 문제</p>
+
+    <div class="case-card">
+      <div class="who">실제 운영 상황</div>
+      <div class="quote">"워크샵 신청자에게 알림톡 1번 보내려면 — 노션에서 신청자 정리 → ChatGPT로 글 쓰기 → 카카오 규칙 다시 검색 → 솔라피 화면에 변수 넣고 등록 → 검수 통과 확인 → 솔라피에서 직접 발송 → 다시 노션 가서 누구한테 갔는지 적기. <strong>매번 30분 이상</strong>이 들었어요."</div>
+    </div>
+
+    <h3 style="font-size:17px;font-weight:700;margin-top:24px;">대표 페인 포인트</h3>
+    <ul class="pain-list">
+      <li>보낼 때마다 <strong>카카오 검수 규칙을 다시 검색</strong> — 어떤 단어가 광고로 걸리는지·글자 수는 몇 자까지인지 매번 확인</li>
+      <li><strong>알림톡과 친구톡이 만드는 방식이 완전 다름</strong> — 친구톡만 8가지 형식인데 각각 규칙이 또 다름</li>
+      <li>같은 항목인데 <strong>노션·솔라피·입력 폼 이름이 따로</strong> — 한 번 오타 나면 발송 자체가 안 됨</li>
+      <li>발송이 끝나도 <strong>"누구한테 갔는지"는 노션에 손으로 다시 적어줘야</strong></li>
+      <li>실패한 사람을 보려면 <strong>솔라피 화면을 또 따로 켜야</strong> — 한 흐름이 안 됨</li>
+    </ul>
+
+    <p style="margin-top:24px;color:var(--gray);font-size:14px;">
+      <span class="todo">보충 필요</span> 처음 만들기 시작한 구체적 계기·시기
+    </p>
+  </div>
+</section>
+
+<section class="step" id="step-02">
+  <div class="container">
+    <div class="step-num">02</div>
+    <h2 class="step-title">어떻게 풀었나</h2>
+    <p class="step-sub">실제 겪었던 시행착오</p>
+
+    <div class="trial-list">
+      <div class="trial-card">
+        <div class="ti"><div class="tn">1</div><div class="tt">하나의 AI에 모든 규칙을 다 넣었더니 결과가 흐릿함</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>알림톡·친구톡 8가지 형식 규칙을 한 AI에 다 넣었더니, 워크샵 안내인데 마케팅 톤이 나오고 마케팅인데 워크샵 톤이 나옴. AI가 헷갈려서 결과가 흐릿</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>용도별로 <strong>AI를 5개로 분리</strong> — 알림톡 전용, 친구톡 자유형 전용, 친구톡 템플릿형 전용, 알림톡 검수 전용, 친구톡 검수 전용. 각 AI가 자기 영역만 보니까 결과가 또렷해짐</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">2</div><div class="tt">친구톡 8가지 형식 — 규칙이 솔라피 문서 곳곳에 흩어져 있음</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>친구톡도 알림톡처럼 한 가지인 줄 알았더니 8가지 형식이 각각 다름. 특히 "캐러셀 상품" 형식은 "위쪽에 버튼 넣으면 안 되고 항목 안에만 가능" 같은 규칙이 문서 여기저기 흩어져</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>8가지 각각의 <strong>입력 양식을 미리 코드로 만들어두고 자동 변환</strong>. 사용자는 형식만 고르면 끝</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">3</div><div class="tt">솔라피가 카카오 검수 신청까지는 자동으로 안 해줌</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>솔라피가 알림톡 등록은 자동인데 "이거 검수해 주세요"는 사용자가 솔라피 화면에 직접 들어가서 클릭해야. 자동화 흐름이 끊김</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>솔라피가 공식 안내한 통로 말고 <strong>내부 주소를 찾아내서 자동 신청</strong>. 등록 → 검수 → 통과까지 알림톡 안에서 한 번에</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">4</div><div class="tt">같은 항목인데 이름이 3개 — 매번 헷갈림</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>노션은 "이름", 알림톡은 "user_name", 입력 폼은 "성함" — 한 항목인데 이름이 3개. 매번 매핑해줘야 하고 오타 한 번이면 안 보내짐</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>이름 하나로 통일</strong> — 폼에 "이름"이라 쓰면 노션도 "이름", 변수도 "이름". 발송 유형(워크샵·콘텐츠·마케팅)별 기본 항목도 자동으로 채워줌</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">5</div><div class="tt">검수 결과가 너무 늦게 떠서 답답</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>광고 단어·글자 수 검사와 AI 의미 평가를 한 번에 처리. 8~12초 빈 화면 대기. 사용자가 끊긴 느낌</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>빠른 검사는 즉시 표시, AI 평가는 글이 흘러나오듯 점진 표시</strong>. 사용자는 결과 일부를 바로 보고 나머지를 기다림</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:24px;color:var(--gray);font-size:14px;">
+      <span class="todo">보충 필요</span> 다른 시행착오가 있다면
+    </p>
+  </div>
+</section>
+
+<section class="step" id="step-03">
+  <div class="container">
+    <div class="step-num">03</div>
+    <h2 class="step-title">실제 동작 화면</h2>
+    <p class="step-sub">한 모달 안에서 모든 발송 흐름</p>
+
+    <div class="screen-card">
+      <span class="label">발송 캠페인 5단계 마법사</span>
+      <h4>한 모달에서 — 글·받는 사람·필터·발송 방식·결과 정리</h4>
+      <p>① 어떤 글·언제 보낼지 ② 노션에서 누구한테 보낼지 ③ 조건 필터(VIP만·신규만 등) ④ 즉시 발송·예약·자동 발송 중 선택 ⑤ 결과를 노션에 어떻게 자동으로 적을지. 확인 화면에서 시점별 받는 사람 수·총 건수 미리보기 → [🚀 최종 발송]. 결과 화면에 성공·실패한 사람까지 한눈에.</p>
+      <div class="placeholder-img">[스크린샷 자리 — 캠페인 5단계 마법사 (또는 GIF/짧은 영상)]</div>
+    </div>
+  </div>
+</section>
+
+<section class="before-section">
+  <div class="container">
+    <span class="badge-line">BEFORE</span>
+    <h2>기존엔 이렇게 보냈어요</h2>
+    <p class="sub">도구 5개를 거쳐야 한 번 발송</p>
+
+    <div class="before-row">
+      <div class="before-step-box">
+        <div class="num">1</div>
+        <div class="tool">노션 + ChatGPT</div>
+        <div class="desc">신청자 정리 + 글 초안</div>
+      </div>
+      <div class="arrow-x">→</div>
+      <div class="before-step-box">
+        <div class="num">2</div>
+        <div class="tool">솔라피 화면</div>
+        <div class="desc">변수 입력·검수·발송</div>
+      </div>
+      <div class="arrow-x">→</div>
+      <div class="before-step-box">
+        <div class="num">3</div>
+        <div class="tool">노션</div>
+        <div class="desc">결과를 손으로 다시 적기</div>
+      </div>
+    </div>
+
+    <div class="before-summary-bar">
+      <strong>총 8단계</strong>
+      <span class="sep">|</span>
+      도구 옮기고 · 복붙하고 · 다시 정리하고
+    </div>
+  </div>
+</section>
+
+<section class="after-section">
+  <div class="container">
+    <span class="badge">AFTER</span>
+    <h2>이제는 한 흐름으로</h2>
+    <p class="sub">한 화면 · 한 흐름 · 자동</p>
+
+    <div class="ba-grid">
+      <div class="ba-card">
+        <h3>BEFORE</h3>
+        <ol>
+          <li>노션에 보낼 사람 정리</li>
+          <li>ChatGPT로 알림톡 초안</li>
+          <li>카카오 규칙 매번 검색</li>
+          <li>솔라피 화면에서 변수 입력·등록</li>
+          <li>검수 통과될 때까지 수동 확인</li>
+          <li>솔라피 화면에서 직접 발송</li>
+          <li>실패한 사람 솔라피에서 또 확인</li>
+          <li>노션에 결과 손으로 다시 적기</li>
+        </ol>
+        <div class="summary">8단계 · 도구 5개+ · <span class="todo" style="background:#666;color:#fff;">평균 시간 보충</span></div>
+      </div>
+
+      <div class="ba-arrow">→</div>
+
+      <div class="ba-card after">
+        <h3>AFTER</h3>
+        <ol>
+          <li>입력 → AI 글 생성 → 즉시 검수</li>
+          <li>[저장 & 검수 신청] 한 번 클릭</li>
+          <li>발송 화면 5단계 → [발송하기]</li>
+          <li>노션은 자동으로 결과 정리</li>
+        </ol>
+        <div class="summary">4단계 · 도구 1개 · <span class="todo">평균 시간 보충</span></div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h3>5개 도구 → 1개 흐름</h3>
+      <p>글 작성·검수·발송이 한 화면 안에서</p>
+      <button>알림톡 만들기 시작 →</button>
+    </div>
+  </div>
+</section>
+
+<footer>todoto alimtalk · case study · 2026-05-12</footer>
+
+</body>
+</html>

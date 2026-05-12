@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>todoto · case studies</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .index-hero {
+    background: var(--ink);
+    color: #fff;
+    padding: 80px 0 64px;
+  }
+  .index-hero h1 {
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+  .index-hero h1 em { color: var(--brand-bright); font-style: normal; }
+  .index-hero p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.78);
+    max-width: 560px;
+    margin-bottom: 0;
+  }
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 64px 0;
+  }
+  .case-card-link {
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.15s;
+    display: block;
+  }
+  .case-card-link:hover {
+    border-color: var(--brand);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,12,254,0.08);
+  }
+  .case-card-link .emoji {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .case-card-link .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brand);
+    background: var(--brand-soft);
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+  .case-card-link h3 {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .case-card-link .ba {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .case-card-link .ba strong { color: var(--brand); font-weight: 700; }
+  .case-card-link .arrow {
+    font-size: 13px;
+    color: var(--brand);
+    font-weight: 700;
+  }
+  .index-footer {
+    background: var(--bg-soft);
+    padding: 48px 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+  .index-footer h2 {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .index-footer p {
+    font-size: 14px;
+    color: var(--gray);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  @media (max-width: 640px) {
+    .index-hero h1 { font-size: 30px; }
+    .case-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<section class="index-hero">
+  <div class="container">
+    <h1>1인 브랜드의 운영을<br><em>4가지 도구로</em> 풀어낸 기록</h1>
+    <p>워크샵·SNS·블로그·랜딩페이지 — 매번 외주·수동·감으로 운영하던 것을 직접 AI로 자동화한 4개 케이스 스터디.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="case-grid">
+
+      <a class="case-card-link" href="alimtalk.html">
+        <div class="emoji">💬</div>
+        <span class="tag">CASE 01</span>
+        <h3>todoto alimtalk</h3>
+        <p class="ba">카카오 알림톡 카피·검수·발송을 한 흐름으로</p>
+        <p class="ba"><strong>BEFORE</strong> 8단계 · 도구 5개 → <strong>AFTER</strong> 4단계 · 1개</p>
+        <span class="arrow">자세히 보기 →</span>
+      </a>
+
+      <a class="case-card-link" href="hub.html">
+        <div class="emoji">📝</div>
+        <span class="tag">CASE 02</span>
+        <h3>todoto hub</h3>
+        <p class="ba">자사몰 블로그 SEO 글 기획·작성·발행 자동화</p>
+        <p class="ba"><strong>BEFORE</strong> 1편 6시간 → <strong>AFTER</strong> 1편 1시간</p>
+        <span class="arrow">자세히 보기 →</span>
+      </a>
+
+      <a class="case-card-link" href="landing.html">
+        <div class="emoji">🎯</div>
+        <span class="tag">CASE 03</span>
+        <h3>todoto landing</h3>
+        <p class="ba">워크샵 랜딩페이지를 디자이너 없이 셀프로</p>
+        <p class="ba"><strong>BEFORE</strong> 디자이너 1주 → <strong>AFTER</strong> 30분 셀프</p>
+        <span class="arrow">자세히 보기 →</span>
+      </a>
+
+      <a class="case-card-link" href="sns.html">
+        <div class="emoji">📊</div>
+        <span class="tag">CASE 04</span>
+        <h3>todoto SNS</h3>
+        <p class="ba">Instagram 운영을 노션 + AI 통합 OS로</p>
+        <p class="ba"><strong>BEFORE</strong> 분산·휘발·감 → <strong>AFTER</strong> 통합·영구·데이터</p>
+        <span class="arrow">자세히 보기 →</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="index-footer">
+  <div class="container">
+    <h2>4개 도구가 만든 1인 브랜드 운영 OS</h2>
+    <p>같은 운영자가 6개월 동안 직접 만들고 운영한 도구들. 각 케이스는 시행착오와 전환의 기록.</p>
+  </div>
+</section>
+
+<footer>todoto case studies · 2026-05-12</footer>
+
+</body>
+</html>
