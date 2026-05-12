@@ -392,13 +392,96 @@ footer {
 }
 
 @media (max-width: 640px) {
-  .hero h1 { font-size: 28px; }
-  .step-num { font-size: 44px; }
-  .before-row { grid-template-columns: 1fr; }
-  .before-row .arrow-x { transform: rotate(90deg); }
-  .trial-card .tarrow { grid-template-columns: 1fr; }
-  .trial-card .arrow-mid { transform: rotate(90deg); }
-  .ba-grid { grid-template-columns: 1fr; }
-  .ba-arrow { transform: rotate(90deg); }
-  .placeholder-img { height: 220px; }
+  /* Container */
+  .container { padding: 0 16px; }
+
+  /* Case nav */
+  .case-nav { gap: 4px; padding: 10px 12px; }
+  .case-nav a { font-size: 12px; padding: 5px 10px; }
+
+  /* HERO */
+  .hero { padding: 44px 0 52px; }
+  .hero .brand-tag { font-size: 12px; padding: 5px 12px; margin-bottom: 18px; }
+  .hero h1 { font-size: 26px; line-height: 1.3; margin-bottom: 16px; }
+  .hero .sub { font-size: 15px; line-height: 1.55; margin-bottom: 22px; }
+  .hero .bullets { margin-bottom: 24px; }
+  .hero .bullets li { font-size: 14px; margin-bottom: 7px; line-height: 1.55; }
+  .hero .cta { font-size: 14px; padding: 12px 24px; }
+
+  /* INTRO */
+  .intro { padding: 44px 0 20px; }
+  .intro h2 { font-size: 22px; line-height: 1.3; margin-bottom: 12px; }
+  .intro p { font-size: 14px; line-height: 1.65; }
+
+  /* STEP */
+  .step { padding: 48px 0; }
+  .step-num { font-size: 42px; margin-bottom: 12px; }
+  .step-title { font-size: 20px; line-height: 1.3; }
+  .step-sub { font-size: 13px; margin-bottom: 26px; }
+
+  /* case-card (인용) */
+  .case-card { padding: 20px; margin-bottom: 24px; border-radius: 12px; }
+  .case-card .who { font-size: 12px; margin-bottom: 10px; }
+  .case-card .quote { font-size: 14px; line-height: 1.65; }
+
+  /* pain-list */
+  .pain-list li { font-size: 14px; padding: 12px 0 12px 30px; line-height: 1.55; }
+  .pain-list li::before { top: 13px; width: 20px; height: 20px; line-height: 20px; font-size: 11px; }
+
+  /* Trial */
+  .trial-list { gap: 14px; }
+  .trial-card { padding: 18px 18px; border-radius: 12px; }
+  .trial-card .ti { gap: 10px; margin-bottom: 14px; }
+  .trial-card .ti .tn { width: 26px; height: 26px; line-height: 26px; font-size: 12px; }
+  .trial-card .ti .tt { font-size: 15px; line-height: 1.45; }
+  .trial-card .tarrow { grid-template-columns: 1fr; gap: 10px; }
+  .trial-card .tbox { padding: 14px 16px; font-size: 13px; line-height: 1.55; border-radius: 8px; }
+  .trial-card .tbox .tlabel { font-size: 10px; margin-bottom: 5px; }
+  .trial-card .arrow-mid { transform: rotate(90deg); font-size: 18px; }
+
+  /* Screen card */
+  .screen-card { padding: 22px 20px; border-radius: 12px; }
+  .screen-card .label { font-size: 11px; padding: 4px 10px; margin-bottom: 12px; }
+  .screen-card h4 { font-size: 16px; line-height: 1.35; margin-bottom: 10px; }
+  .screen-card p { font-size: 13.5px; line-height: 1.65; }
+  .placeholder-img { height: 180px; font-size: 12px; margin-top: 18px; }
+
+  /* BEFORE 다이어그램 */
+  .before-section { padding: 52px 0; }
+  .before-section .badge-line { font-size: 12px; padding: 5px 14px; }
+  .before-section h2 { font-size: 22px; line-height: 1.3; }
+  .before-section .sub { font-size: 13px; margin-bottom: 28px; }
+  .before-row { grid-template-columns: 1fr; gap: 10px; }
+  .before-row .arrow-x { transform: rotate(90deg); font-size: 16px; }
+  .before-step-box { padding: 20px 16px; border-radius: 12px; }
+  .before-step-box .num { width: 28px; height: 28px; line-height: 28px; font-size: 13px; margin-bottom: 10px; }
+  .before-step-box .tool { font-size: 15px; }
+  .before-step-box .desc { font-size: 12px; }
+  .before-summary-bar { font-size: 13px; padding: 12px 18px; line-height: 1.5; }
+  .before-summary-bar .sep { margin: 0 10px; }
+
+  /* AFTER */
+  .after-section { padding: 56px 0; }
+  .after-section .badge { font-size: 12px; padding: 5px 14px; }
+  .after-section h2 { font-size: 24px; line-height: 1.3; }
+  .after-section .sub { font-size: 13px; margin-bottom: 32px; }
+  .ba-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; }
+  .ba-arrow { transform: rotate(90deg); font-size: 20px; }
+  .ba-card { padding: 20px; border-radius: 12px; }
+  .ba-card h3 { font-size: 12px; margin-bottom: 14px; letter-spacing: 0.04em; }
+  .ba-card ol li { font-size: 13px; padding: 7px 0 7px 26px; line-height: 1.5; }
+  .ba-card ol li::before { width: 18px; height: 18px; line-height: 18px; font-size: 10px; }
+  .ba-card .summary { font-size: 12px; margin-top: 14px; padding-top: 14px; line-height: 1.55; }
+
+  /* CTA */
+  .cta-band { padding: 36px 22px; border-radius: 14px; }
+  .cta-band h3 { font-size: 18px; line-height: 1.35; }
+  .cta-band p { font-size: 13px; margin-bottom: 20px; line-height: 1.55; }
+  .cta-band button { font-size: 14px; padding: 12px 26px; }
+
+  /* Todo 강조 */
+  .todo { font-size: 11px; padding: 2px 7px; }
+
+  /* Footer */
+  footer { padding: 24px 0; font-size: 12px; }
 }
