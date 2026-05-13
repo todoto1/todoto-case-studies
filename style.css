@@ -697,15 +697,11 @@ footer {
 }
 .flow-h-step .h-tool-mark {
   display: flex;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+  width: 80px;
+  height: 80px;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  font-weight: 800;
-  color: #fff;
-  margin: 4px auto 8px;
+  margin: 4px auto 12px;
 }
 .flow-h-step .h-title {
   font-size: 28px;
@@ -719,8 +715,8 @@ footer {
   stroke: currentColor;
 }
 .flow-h-step .h-tool-mark img {
-  width: 36px;
-  height: 36px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
 }
 
