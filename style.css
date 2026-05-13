@@ -690,10 +690,22 @@ footer {
   background: var(--ink);
   color: #fff;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 8px;
   font-size: 12px;
   font-weight: 700;
   margin: 0 auto 16px;
+}
+.flow-h-step .h-tool-mark {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin: 4px auto 8px;
 }
 .flow-h-step .h-title {
   font-size: 24px;
