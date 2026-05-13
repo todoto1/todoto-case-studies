@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>todoto alimtalk — 플로우차트 시안</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="case-nav">
+  <a href="index.html">🏠 대시보드</a>
+  <a href="alimtalk.html">alimtalk</a>
+  <a href="hub.html">hub</a>
+  <a href="landing.html">landing</a>
+  <a href="sns.html">sns</a>
+  <span style="font-size:12px;color:var(--gray-light);padding:6px 12px;">/ 시안: 플로우차트 시각화</span>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="brand-tag">todoto alimtalk · case study</div>
+    <h1>1인 브랜드의 카카오 알림톡을<br><em>카피·검수·발송</em> 한 흐름으로</h1>
+    <p class="sub">5개 도구를 1개 화면으로. 알림톡 글 작성부터 발송·노션 결과 정리까지 한 번에.</p>
+    <ul class="bullets">
+      <li>구독제 AI로 만들어 — 매번 호출 비용 0</li>
+      <li>알림톡·친구톡 8가지 형식을 각각 자동화</li>
+      <li>카카오 검수 신청도 한 번 클릭으로</li>
+      <li>발송 결과는 노션에 자동으로 정리</li>
+    </ul>
+    <a href="#chapter-1" class="cta">전체 스토리 보기 →</a>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container">
+    <h2>5개 도구 → <em>1개 흐름</em></h2>
+    <p>워크샵 1번 알림톡 보내려고 노션·ChatGPT·솔라피·스티비·탈리를 오가던 운영자가, 한 화면에서 글 만들고·검수 받고·발송하고·노션 결과까지 정리하게 된 이야기.</p>
+  </div>
+</section>
+
+<!-- Chapter 1: 문제 -->
+<section class="chapter" id="chapter-1">
+  <div class="container">
+    <div class="chapter-label">Chapter 1</div>
+    <h2 class="chapter-title">문제: 알림톡 1번 보내려고 8단계, 30분 이상</h2>
+    <p class="chapter-intro">신청자 정리·카피·검수·발송·결과 업데이트 — 한 흐름이 끊긴 도구 5개 사이를 매번 오갔습니다.</p>
+
+    <div class="flow-board with-total">
+      <div class="flow-cap-wrap"><span class="flow-cap">시작</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">1</span>
+        <span class="fbtext">노션에 신청자 정리</span>
+        <span class="fbtime">10분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">2</span>
+        <span class="fbtext">ChatGPT로 카피 초안</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">3</span>
+        <span class="fbtext">카카오 검수 규칙 매번 검색</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">4</span>
+        <span class="fbtext">솔라피 콘솔에서 변수 입력·등록</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">5</span>
+        <span class="fbtext">검수 통과 수동 확인</span>
+        <span class="fbtime">10분~</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">6</span>
+        <span class="fbtext">솔라피에서 직접 발송</span>
+        <span class="fbtime">3분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">7</span>
+        <span class="fbtext">실패한 사람 솔라피에서 확인</span>
+        <span class="fbtime">3분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">8</span>
+        <span class="fbtext">노션 결과 손으로 정리</span>
+        <span class="fbtime">10분~</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-cap-wrap"><span class="flow-cap">종료</span></div>
+
+      <div class="flow-total">
+        <div class="flow-total-line"></div>
+        <div class="flow-total-badge">총 30분 이상<br>+ 검수 대기 별도</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 2: 솔루션 -->
+<section class="chapter" id="chapter-2">
+  <div class="container">
+    <div class="chapter-label">Chapter 2</div>
+    <h2 class="chapter-title">솔루션: AI · 솔라피 · 노션을 한 흐름으로 묶음</h2>
+    <p class="chapter-intro">단순 반복 작업에 사람의 개입을 0으로 만드는 것이 기획의 핵심. 카피 생성 → 검수 → 등록 → 발송 → 결과 정리까지 한 화면에서 자동으로 이어집니다.</p>
+
+    <div class="flow-board">
+      <div class="flow-cap-wrap"><span class="flow-cap">시작</span></div>
+      <div class="flow-link"></div>
+
+      <!-- 그룹 1 -->
+      <div class="flow-group">
+        <div style="text-align:center;"><span class="flow-group-header">✦ 1단계: AI 카피 생성·검수</span></div>
+        <div class="flow-box">
+          <span class="fbnum">1</span>
+          <span class="fbtext">컨텍스트 입력 (워크샵·콘텐츠·마케팅·직접)</span>
+        </div>
+        <div class="flow-link"></div>
+        <div class="flow-box">
+          <span class="fbnum">2</span>
+          <span class="fbtext">5개 AI 중 자동 선택 · 카피 생성</span>
+        </div>
+        <div class="flow-link"></div>
+        <div class="flow-box">
+          <span class="fbnum">3</span>
+          <span class="fbtext">광고·글자수·변수 즉시 검사 + AI 톤 평가</span>
+        </div>
+      </div>
+
+      <div class="flow-link"></div>
+
+      <!-- 그룹 2 with callout -->
+      <div class="flow-callout-wrap"><span class="flow-callout">사용자는 [발송하기] 한 번만!</span></div>
+      <div class="flow-group">
+        <div style="text-align:center;"><span class="flow-group-header">✦ 2단계: 솔라피 자동 등록·발송</span></div>
+        <div class="flow-box">
+          <span class="fbnum">1</span>
+          <span class="fbtext">솔라피 자동 등록</span>
+        </div>
+        <div class="flow-link"></div>
+        <div class="flow-box">
+          <span class="fbnum">2</span>
+          <span class="fbtext">카카오 검수 자동 신청</span>
+        </div>
+        <div class="flow-link"></div>
+        <div class="flow-box">
+          <span class="fbnum">3</span>
+          <span class="fbtext">통과 후 발송 (즉시·예약·자동 중 선택)</span>
+        </div>
+      </div>
+
+      <div class="flow-link"></div>
+
+      <!-- 그룹 3 -->
+      <div class="flow-group">
+        <div style="text-align:center;"><span class="flow-group-header">✦ 3단계: 노션 자동 정리</span></div>
+        <div class="flow-box">
+          <span class="fbnum">1</span>
+          <span class="fbtext">발송 결과 노션 자동 업데이트</span>
+        </div>
+        <div class="flow-link"></div>
+        <div class="flow-box">
+          <span class="fbnum">2</span>
+          <span class="fbtext">영구 아카이브 자동 저장</span>
+        </div>
+      </div>
+
+      <div class="flow-link"></div>
+      <div class="flow-cap-wrap"><span class="flow-cap">종료</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 3: 실제 동작 (원본의 step 03 활용) -->
+<section class="step" id="chapter-3">
+  <div class="container">
+    <div class="chapter-label">Chapter 3</div>
+    <h2 class="chapter-title">실제 동작 — 발송 캠페인 한 모달</h2>
+    <p class="chapter-intro">위 3단계 흐름이 사용자 입장에서 어떻게 보이는지.</p>
+
+    <div class="screen-card">
+      <span class="label">발송 캠페인 5단계 마법사</span>
+      <h4>한 모달에서 — 글·받는 사람·필터·발송 방식·결과 정리</h4>
+      <p>① 어떤 글·언제 보낼지 ② 노션에서 누구한테 보낼지 ③ 조건 필터(VIP만·신규만 등) ④ 즉시 발송·예약·자동 발송 중 선택 ⑤ 결과를 노션에 어떻게 자동으로 적을지. 확인 화면에서 시점별 받는 사람 수·총 건수 미리보기 → [🚀 최종 발송]. 결과 화면에 성공·실패한 사람까지 한눈에.</p>
+      <div class="placeholder-img">[스크린샷 자리 — 캠페인 5단계 마법사]</div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 4: 결과 (원본 AFTER 섹션) -->
+<section class="after-section">
+  <div class="container">
+    <span class="badge">결과</span>
+    <h2>8단계·30분+ → 4단계·5분</h2>
+    <p class="sub">도구 5개 → 1개 · 한 화면 안에서</p>
+
+    <div class="ba-grid">
+      <div class="ba-card">
+        <h3>BEFORE</h3>
+        <ol>
+          <li>노션에 보낼 사람 정리</li>
+          <li>ChatGPT로 알림톡 초안</li>
+          <li>카카오 규칙 매번 검색</li>
+          <li>솔라피 화면에서 변수 입력·등록</li>
+          <li>검수 통과될 때까지 수동 확인</li>
+          <li>솔라피 화면에서 직접 발송</li>
+          <li>실패한 사람 솔라피에서 또 확인</li>
+          <li>노션에 결과 손으로 다시 적기</li>
+        </ol>
+        <div class="summary">8단계 · 도구 5개+ · 30분+/회</div>
+      </div>
+
+      <div class="ba-arrow">→</div>
+
+      <div class="ba-card after">
+        <h3>AFTER</h3>
+        <ol>
+          <li>입력 → AI 글 생성 → 즉시 검수</li>
+          <li>[저장 & 검수 신청] 한 번 클릭</li>
+          <li>발송 화면 5단계 → [발송하기]</li>
+          <li>노션은 자동으로 결과 정리</li>
+        </ol>
+        <div class="summary">4단계 · 도구 1개 · 5분/회</div>
+      </div>
+    </div>
+
+    <div class="cta-band">
+      <h3>5개 도구 → 1개 흐름</h3>
+      <p>글 작성·검수·발송이 한 화면 안에서</p>
+      <button>알림톡 만들기 시작 →</button>
+    </div>
+  </div>
+</section>
+
+<footer>todoto alimtalk · 플로우차트 시안 · 2026-05-13</footer>
+
+</body>
+</html>
