@@ -914,8 +914,8 @@ footer {
 
 @media (max-width: 640px) {
   /* h-tool-mark 모바일 */
-  .flow-h-step .h-tool-mark { width: 56px; height: 56px; }
-  .flow-h-step .h-tool-mark img { width: 56px; height: 56px; }
+  .flow-h-step .h-tool-mark { width: 44px; height: 44px; }
+  .flow-h-step .h-tool-mark img { width: 44px; height: 44px; }
 
   /* stage-detail 모바일 */
   .stage-detail { margin-top: 36px; }
@@ -1005,8 +1005,8 @@ footer {
   margin-bottom: 14px;
 }
 .result-card .rc-tool-img {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   margin: 4px auto 8px;
   display: block;
