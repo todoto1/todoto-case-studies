@@ -708,11 +708,15 @@ footer {
   margin: 4px auto 8px;
 }
 .flow-h-step .h-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 800;
   margin: 4px 0 18px;
   color: var(--ink);
   letter-spacing: -0.02em;
+}
+.flow-h-step .h-tool-mark svg {
+  fill: currentColor;
+  stroke: currentColor;
 }
 .flow-h-step .h-feature {
   background: #fff;
