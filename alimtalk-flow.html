@@ -229,6 +229,62 @@
   </div>
 </section>
 
+<!-- Chapter 2.5: 시행착오 (만들면서 배운 것) -->
+<section class="chapter" id="chapter-trial">
+  <div class="container">
+    <div class="chapter-label">Chapter 2.5</div>
+    <h2 class="chapter-title">만들면서 배운 것 — 실제 시행착오</h2>
+    <p class="chapter-intro">한 번에 잘 된 게 아닙니다. 5가지 큰 시행착오를 거쳐 지금 구조가 나왔어요.</p>
+
+    <div class="trial-list">
+      <div class="trial-card">
+        <div class="ti"><div class="tn">1</div><div class="tt">하나의 AI에 모든 규칙을 다 넣었더니 결과가 흐릿함</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>알림톡·친구톡 8가지 형식 규칙을 한 AI에 다 넣었더니, 워크샵 안내인데 마케팅 톤이 나오고 마케팅인데 워크샵 톤이 나옴. AI가 헷갈려서 결과가 흐릿</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>용도별로 <strong>AI를 5개로 분리</strong> — 알림톡 전용, 친구톡 자유형 전용, 친구톡 템플릿형 전용, 알림톡 검수 전용, 친구톡 검수 전용. 각 AI가 자기 영역만 보니까 결과가 또렷해짐</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">2</div><div class="tt">친구톡 8가지 형식 — 규칙이 문서 곳곳에 흩어져 있음</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>친구톡도 알림톡처럼 한 가지인 줄. 특히 "캐러셀 상품" 형식은 "위쪽에 버튼 넣으면 안 되고 항목 안에만 가능" 같은 규칙이 문서 여기저기 흩어져</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>8가지 각각의 <strong>입력 양식을 미리 코드로 만들어두고 자동 변환</strong>. 사용자는 형식만 고르면 끝</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">3</div><div class="tt">솔라피가 카카오 검수 신청까지는 자동으로 안 해줌</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>솔라피가 알림톡 등록은 자동인데 "이거 검수해 주세요"는 사용자가 솔라피 화면에 직접 들어가 클릭해야. 자동화 흐름이 끊김</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>솔라피가 공식 안내한 통로 말고 <strong>내부 주소를 찾아내서 자동 신청</strong>. 등록 → 검수 → 통과까지 한 번에</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">4</div><div class="tt">같은 항목인데 이름이 3개 — 매번 헷갈림</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>노션은 "이름", 알림톡은 "user_name", 입력 폼은 "성함" — 한 항목인데 이름이 3개. 오타 한 번이면 안 보내짐</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>이름 하나로 통일</strong> — 폼에 "이름"이라 쓰면 노션도 "이름", 변수도 "이름". 발송 유형별 기본 항목도 자동 채워줌</div>
+        </div>
+      </div>
+
+      <div class="trial-card">
+        <div class="ti"><div class="tn">5</div><div class="tt">검수 결과가 너무 늦게 떠서 답답</div></div>
+        <div class="tarrow">
+          <div class="tbox"><span class="tlabel">처음에는</span>광고 단어·글자 수 검사와 AI 의미 평가를 한 번에 처리. 8~12초 빈 화면 대기. 사용자가 끊긴 느낌</div>
+          <div class="arrow-mid">→</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>빠른 검사는 즉시 표시, AI 평가는 글이 흘러나오듯 점진 표시</strong>. 사용자는 결과 일부를 바로 보고 나머지를 기다림</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Chapter 3: 결과 — 도구별 시간 절약 + 인터뷰 -->
 <section class="chapter" id="chapter-3">
   <div class="container">
