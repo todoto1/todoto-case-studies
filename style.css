@@ -666,3 +666,58 @@ footer {
   border-right: 7px solid transparent;
   border-top: 7px solid #E74C3C;
 }
+
+/* === 가로 3단계 (도구별 솔루션) === */
+.flow-horizontal {
+  display: grid;
+  grid-template-columns: 1fr 32px 1fr 32px 1fr;
+  gap: 8px;
+  align-items: stretch;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.flow-h-step {
+  background: #ECEEF2;
+  border: none;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.flow-h-step .h-badge {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+.flow-h-step .h-title {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 4px 0 18px;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+.flow-h-step .h-feature {
+  background: #fff;
+  border: 1px solid #DCDFE6;
+  border-radius: 10px;
+  padding: 11px 12px;
+  font-size: 13px;
+  color: var(--ink-2);
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.flow-h-step .h-feature:last-child { margin-bottom: 0; }
+.flow-horizontal > .arrow-x {
+  align-self: center;
+  text-align: center;
+  color: var(--gray-light);
+  font-size: 18px;
+  font-weight: 700;
+}
