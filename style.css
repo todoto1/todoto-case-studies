@@ -753,12 +753,13 @@ footer {
   background: #fff;
   border: 1px solid #DCDFE6;
   border-radius: 10px;
-  padding: 11px 12px;
-  font-size: 13px;
+  padding: 10px 10px;
+  font-size: 12.5px;
   color: var(--ink-2);
   margin-bottom: 8px;
   line-height: 1.5;
   font-weight: 500;
+  white-space: nowrap;
 }
 .flow-h-step .h-feature:last-child { margin-bottom: 0; }
 .flow-horizontal > .arrow-x {
