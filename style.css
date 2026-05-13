@@ -697,8 +697,8 @@ footer {
 }
 .flow-h-step .h-tool-mark {
   display: flex;
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   align-items: center;
   justify-content: center;
   margin: 4px auto 12px;
@@ -716,8 +716,8 @@ footer {
   stroke: currentColor;
 }
 .flow-h-step .h-tool-mark img {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
 }
 
