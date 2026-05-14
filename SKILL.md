@@ -245,6 +245,35 @@ git push → GitHub Pages 자동 재배포 (1~2분)
 
 수정·배포 분리: GitHub에서 수정 → 아임웹은 건드릴 일 없음.
 
+## 스크린샷 관리
+
+### 폴더 구조
+
+`assets/screenshots/<case>/<번호>-<이름>.png`
+
+각 case 3개 자리 (Chapter 2 단계별 상세):
+- alimtalk: `01-claude-code.png` · `02-solapi.png` · `03-notion.png`
+- hub: `01-claude-code.png` · `02-reviewer.png` · `03-imweb.png`
+- landing: `01-step0.png` · `02-claude-code.png` · `03-imweb.png`
+- sns: `01-github.png` · `02-notion.png` · `03-claude-code.png`
+- slide: `01-notion.png` · `02-claude-code.png` · `03-notion.png`
+
+상세: `assets/screenshots/README.md`
+
+### 작업 흐름
+
+1. 스크린샷 캡처 (Win+Shift+S / Cmd+Shift+4)
+2. 위 폴더 구조의 정확한 위치·이름으로 저장
+3. `git push` → GitHub Pages 자동 반영
+
+HTML 수정 불필요 — 각 `stage-screenshot` div가 자동으로 이미지 찾음. 이미지 있으면 표시, 없으면 placeholder.
+
+### 권장 크기
+
+- 가로 1200~1600px (16:9 권장)
+- PNG·JPG 둘 다 가능
+- 용량 500KB 이하
+
 ## 향후 보강 영역
 
 - 실제 스크린샷 첨부 (placeholder 자리)
