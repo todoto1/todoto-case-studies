@@ -4,225 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>todoto slide — 케이스 스터디</title>
-<style>
-:root {
-  --bg: #fafafa;
-  --bg-card: #ffffff;
-  --bg-sub: #f4f4f5;
-  --bg-dark: #0a0a0a;
-  --ink: #0a0a0a;
-  --ink-soft: #404040;
-  --gray: #71717a;
-  --gray-line: #e4e4e7;
-  --blue: #3b82f6;
-  --blue-soft: #dbeafe;
-  --blue-deep: #1d4ed8;
-  --danger: #ef4444;
-  --green: #10b981;
-  --font: 'Pretendard', 'Noto Sans KR', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'D2Coding', monospace;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; line-height: 1.5; }
-em { font-style: normal; color: var(--blue); }
-strong { font-weight: 700; }
-
-.container { max-width: 880px; margin: 0 auto; padding: 0 24px; }
-
-/* 네비 */
-.case-nav {
-  display: flex; gap: 4px; padding: 16px 24px; border-bottom: 1px solid var(--gray-line);
-  background: var(--bg-card); position: sticky; top: 0; z-index: 50;
-}
-.case-nav a {
-  font-family: var(--font-mono); font-size: 12px; color: var(--gray); text-decoration: none;
-  padding: 6px 12px; border-radius: 999px; letter-spacing: 0.05em;
-}
-.case-nav a:hover { color: var(--ink); background: var(--bg-sub); }
-.case-nav a.active { background: var(--ink); color: #fff; }
-
-/* Hero */
-.hero { padding: 80px 0 60px; }
-.brand-tag { font-family: var(--font-mono); font-size: 12px; color: var(--blue); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 20px; }
-.hero h1 { font-size: 52px; font-weight: 900; line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 24px; }
-.hero .sub { font-size: 19px; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
-.bullets { list-style: none; margin-bottom: 32px; }
-.bullets li { font-size: 16px; padding-left: 24px; position: relative; margin-bottom: 10px; color: var(--ink-soft); }
-.bullets li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 900; }
-.cta {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--ink); color: #fff; padding: 14px 24px;
-  text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 15px;
-}
-.cta:hover { background: var(--blue-deep); }
-
-/* Intro */
-.intro { background: var(--bg-card); padding: 56px 0; border-top: 1px solid var(--gray-line); border-bottom: 1px solid var(--gray-line); }
-.intro h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; line-height: 1.3; }
-.intro p { color: var(--ink-soft); font-size: 16px; line-height: 1.7; }
-
-/* Step */
-.step { padding: 80px 0; border-bottom: 1px solid var(--gray-line); }
-.step-num {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 48px; height: 48px; background: var(--blue); color: #fff;
-  border-radius: 50%; font-family: var(--font-mono); font-weight: 800; font-size: 16px;
-  margin-bottom: 16px;
-}
-.step-title { font-size: 32px; font-weight: 900; letter-spacing: -0.02em; margin-bottom: 8px; }
-.step-sub { color: var(--gray); font-size: 15px; margin-bottom: 32px; }
-
-/* Case card (quote) */
-.case-card {
-  background: var(--bg-card); border: 1px solid var(--gray-line);
-  border-left: 4px solid var(--blue); border-radius: 8px;
-  padding: 24px 28px; margin: 24px 0;
-}
-.case-card .who { font-family: var(--font-mono); font-size: 11px; color: var(--blue); letter-spacing: 0.12em; margin-bottom: 12px; text-transform: uppercase; }
-.case-card .quote { font-size: 16px; color: var(--ink-soft); line-height: 1.7; }
-.case-card .quote strong { color: var(--ink); }
-
-/* Pain list */
-.pain-list { list-style: none; margin-top: 16px; }
-.pain-list li { font-size: 15px; padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid var(--gray-line); color: var(--ink-soft); line-height: 1.6; }
-.pain-list li:last-child { border-bottom: 0; }
-.pain-list li::before { content: '•'; position: absolute; left: 8px; color: var(--blue); font-weight: 900; font-size: 18px; }
-.pain-list li strong { color: var(--ink); }
-
-.todo { font-family: var(--font-mono); font-size: 10px; padding: 2px 8px; background: var(--bg-sub); color: var(--gray); border-radius: 4px; letter-spacing: 0.05em; }
-
-/* Trial list */
-.trial-list { display: flex; flex-direction: column; gap: 20px; }
-.trial-card {
-  background: var(--bg-card); border: 1px solid var(--gray-line);
-  border-radius: 12px; padding: 24px;
-}
-.trial-card .ti { display: flex; gap: 14px; align-items: center; margin-bottom: 18px; }
-.trial-card .tn {
-  flex-shrink: 0;
-  width: 32px; height: 32px; border-radius: 50%;
-  background: var(--ink); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-mono); font-weight: 800; font-size: 13px;
-}
-.trial-card .tt { font-size: 17px; font-weight: 800; color: var(--ink); line-height: 1.4; }
-.tarrow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: stretch; }
-.tbox {
-  padding: 16px; background: var(--bg-sub); border-radius: 8px;
-  font-size: 14px; color: var(--ink-soft); line-height: 1.6;
-}
-.tbox.fix { background: var(--blue-soft); color: var(--ink); }
-.tbox.fix strong { color: var(--blue-deep); }
-.tlabel {
-  display: block; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
-  color: var(--gray); margin-bottom: 6px; text-transform: uppercase;
-}
-.tbox.fix .tlabel { color: var(--blue-deep); }
-.arrow-mid { display: flex; align-items: center; color: var(--blue); font-size: 22px; font-weight: 900; }
-
-/* Screen card */
-.screen-card {
-  background: var(--bg-card); border: 1px solid var(--gray-line);
-  border-radius: 12px; padding: 28px; margin-top: 24px;
-}
-.screen-card .label {
-  display: inline-block; font-family: var(--font-mono); font-size: 11px;
-  color: var(--blue); background: var(--blue-soft); padding: 4px 10px; border-radius: 4px;
-  letter-spacing: 0.08em; margin-bottom: 12px;
-}
-.screen-card h4 { font-size: 20px; font-weight: 800; line-height: 1.4; margin-bottom: 12px; letter-spacing: -0.01em; }
-.screen-card p { font-size: 15px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
-.placeholder-img {
-  background: var(--bg-sub); border: 2px dashed var(--gray-line); border-radius: 8px;
-  padding: 60px 24px; text-align: center; color: var(--gray);
-  font-family: var(--font-mono); font-size: 13px;
-}
-
-/* Before */
-.before-section { background: var(--bg-card); padding: 64px 0; border-bottom: 1px solid var(--gray-line); }
-.badge-line {
-  display: inline-block; font-family: var(--font-mono); font-size: 11px;
-  color: var(--gray); border: 1px solid var(--gray-line); padding: 4px 12px;
-  border-radius: 999px; letter-spacing: 0.15em; margin-bottom: 16px;
-}
-.before-section h2 { font-size: 32px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.02em; }
-.before-section .sub { color: var(--gray); font-size: 15px; margin-bottom: 32px; }
-.before-row { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: stretch; margin-bottom: 24px; }
-.before-step-box {
-  background: var(--bg-sub); border: 1px solid var(--gray-line);
-  border-radius: 8px; padding: 20px 16px; text-align: center;
-}
-.before-step-box .num {
-  display: inline-flex; align-items: center; justify-content: center;
-  width: 28px; height: 28px; background: var(--gray); color: #fff;
-  border-radius: 50%; font-family: var(--font-mono); font-weight: 700; font-size: 12px;
-  margin-bottom: 10px;
-}
-.before-step-box .tool { font-weight: 800; font-size: 14px; margin-bottom: 4px; }
-.before-step-box .desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
-.arrow-x { display: flex; align-items: center; color: var(--gray); font-size: 22px; font-weight: 900; }
-.before-summary-bar {
-  background: var(--ink); color: #fff; padding: 14px 20px; border-radius: 8px;
-  font-size: 14px; display: flex; gap: 12px; align-items: center;
-}
-.before-summary-bar strong { font-size: 16px; }
-.before-summary-bar .sep { opacity: 0.4; }
-
-/* After */
-.after-section { padding: 64px 0; border-bottom: 1px solid var(--gray-line); background: var(--bg); }
-.badge {
-  display: inline-block; font-family: var(--font-mono); font-size: 11px;
-  color: #fff; background: var(--blue); padding: 4px 12px;
-  border-radius: 999px; letter-spacing: 0.15em; margin-bottom: 16px;
-}
-.after-section h2 { font-size: 32px; font-weight: 900; margin-bottom: 8px; letter-spacing: -0.02em; }
-.after-section .sub { color: var(--gray); font-size: 15px; margin-bottom: 32px; }
-.ba-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: stretch; margin-bottom: 24px; }
-.ba-card {
-  background: var(--bg-card); border: 1px solid var(--gray-line);
-  border-radius: 12px; padding: 24px;
-}
-.ba-card.after { border-color: var(--blue); background: var(--blue-soft); }
-.ba-card h3 {
-  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.15em;
-  color: var(--gray); margin-bottom: 16px; text-transform: uppercase;
-}
-.ba-card.after h3 { color: var(--blue-deep); }
-.ba-card ol { list-style: none; counter-reset: ba; margin-bottom: 16px; }
-.ba-card ol li {
-  counter-increment: ba; padding: 8px 0 8px 28px; position: relative;
-  font-size: 14px; line-height: 1.5; color: var(--ink-soft); border-bottom: 1px solid var(--gray-line);
-}
-.ba-card.after ol li { border-bottom-color: rgba(59,130,246,0.2); color: var(--ink); }
-.ba-card ol li:last-child { border-bottom: 0; }
-.ba-card ol li::before {
-  content: counter(ba); position: absolute; left: 0; top: 8px;
-  font-family: var(--font-mono); font-weight: 800; color: var(--gray); font-size: 12px;
-}
-.ba-card.after ol li::before { color: var(--blue-deep); }
-.ba-card .summary {
-  font-family: var(--font-mono); font-size: 13px; font-weight: 700;
-  padding-top: 12px; border-top: 1px solid var(--gray-line); color: var(--ink);
-}
-.ba-card.after .summary { color: var(--blue-deep); border-top-color: rgba(59,130,246,0.3); }
-.ba-arrow { display: flex; align-items: center; font-size: 28px; color: var(--blue); font-weight: 900; }
-
-/* CTA band */
-.cta-band {
-  background: var(--bg-dark); color: #fff; padding: 40px;
-  border-radius: 16px; text-align: center; margin-top: 24px;
-}
-.cta-band h3 { font-size: 26px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.01em; }
-.cta-band p { color: rgba(255,255,255,0.7); margin-bottom: 20px; }
-.cta-band button {
-  background: var(--blue); color: #fff; border: 0; padding: 14px 28px;
-  border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: inherit;
-}
-.cta-band button:hover { background: var(--blue-deep); }
-
-/* Footer */
-footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 12px; font-family: var(--font-mono); }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -238,88 +20,218 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 12p
 <section class="hero">
   <div class="container">
     <div class="brand-tag">todoto slide · case study</div>
-    <h1>매주 발표 슬라이드를<br><em>노션에서 한 번 골라</em> 14장 자동 완성</h1>
-    <p class="sub">노션에 모아둔 자료가 슬라이드 14장에 자동으로 배치. 한 세션 만드는 데 6시간 걸리던 게 15분으로.</p>
+    <h1>매주 발표 슬라이드를<br><em>노션에서 한 번 골라</em> 14장 자동</h1>
+    <p class="sub">노션에 모아둔 자료가 슬라이드 14장에 자동 배치. 한 세션 6시간이 15분으로.</p>
     <ul class="bullets">
       <li>노션 자료가 슬라이드 14장에 알아서 배치</li>
       <li>발표일·청중·목표가 한 번에 자동으로 채워짐</li>
       <li>발표 끝나면 슬라이드 주소가 노션에 자동으로 다시 적힘</li>
-      <li>모바일로 미리 세션 정해두고, 컴퓨터에서 슬라이드만 뽑아내면 끝</li>
+      <li>모바일로 미리 세션 정해두고 컴퓨터에서 슬라이드만 뽑으면 끝</li>
     </ul>
-    <a href="#step-01" class="cta">전체 스토리 보기 →</a>
+    <a href="#chapter-1" class="cta">전체 스토리 보기 →</a>
   </div>
 </section>
 
 <section class="intro">
   <div class="container">
-    <h2>매번 손으로 만들던 슬라이드 → <em>노션 한 번에 자동</em></h2>
+    <h2>손으로 매번 만들기 → <em>노션에서 한 번에</em></h2>
     <p>매주 발표·웨비나·라이브를 하는 1인 사업자가, 슬라이드 14장을 매번 손으로 만들고·자료 복붙하고·발표 후엔 결과물이 흩어지던 흐름을, 노션에 자료만 모아두면 슬라이드·일정·다음 추천이 다 이어지는 시스템으로 바꾼 이야기.</p>
   </div>
 </section>
 
-<section class="step" id="step-01">
+<!-- Chapter 1: 문제 -->
+<section class="chapter" id="chapter-1">
   <div class="container">
-    <div class="step-num">01</div>
-    <h2 class="step-title">왜 만들었나</h2>
-    <p class="step-sub">매주 발표하는 1인 사업자가 겪던 문제</p>
+    <div class="chapter-label">Chapter 1</div>
+    <h2 class="chapter-title">문제: 슬라이드 14장 만드는 데 매번 6시간</h2>
+    <p class="chapter-intro">노션 자료를 매번 복붙·디자인·말투 통일 — 한 세션에 반나절. 발표 후 결과물도 흩어집니다.</p>
 
-    <div class="case-card">
-      <div class="who">실제 운영 상황</div>
-      <div class="quote">"매주 발표·웨비나·라이브를 함. 블로그·강의록·인터뷰 자료는 노션에 다 있는데, 슬라이드로 옮기는 건 매번 처음부터 다시 — 디자인 맞추고·말투 맞추고·복붙에 30분, 발표 끝나면 결과물은 또 어디 갔는지 모름. 한 세션에 <strong>6시간</strong>씩. 청중도 '이거 들었는데 다음엔 뭐 들으면 좋지?' 가 막막."</div>
+    <div class="flow-board with-total">
+      <div class="flow-cap-wrap"><span class="flow-cap">시작</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">1</span><span class="fbtext">노션에 자료 정리</span><span class="fbtime">30분</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">2</span><span class="fbtext">슬라이드 도구로 옮겨 복붙</span><span class="fbtime">1시간</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">3</span><span class="fbtext">14장 손으로 디자인·카피</span><span class="fbtime">3시간</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">4</span><span class="fbtext">말투·여백 일일이 통일</span><span class="fbtime">1시간</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">5</span><span class="fbtext">발표 후 결과물 어디 갔는지 헤맴</span><span class="fbtime">—</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box"><span class="fbnum">6</span><span class="fbtext">다음 추천 세션 매번 손으로</span><span class="fbtime">30분</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-cap-wrap"><span class="flow-cap">종료</span></div>
+
+      <div class="flow-total">
+        <div class="flow-total-badge">매주 발표마다 반복<br><span style="font-size:11px;font-weight:600;display:block;margin-top:4px;">웨비나·강의·라이브마다</span></div>
+      </div>
     </div>
 
-    <h3 style="font-size:17px;font-weight:700;margin-top:24px;">대표 페인 포인트</h3>
-    <ul class="pain-list">
-      <li>매번 <strong>슬라이드 14장을 손으로</strong> — 디자인·글·말투 통일하느라 같은 작업을 반복</li>
-      <li><strong>노션 자료를 슬라이드로 옮기는 데만 30분 복붙</strong> — 페이지마다 핵심 뽑고 다시 정리</li>
-      <li>발표 후 <strong>결과물이 흩어짐</strong> — 다음 세션이랑 안 이어지고, 시리즈로 묶어도 청중한테는 부담만</li>
-      <li><strong>모바일에선 기획이 안 됨</strong> — 카페에서 떠오른 아이디어는 메모만 해두고 컴퓨터 앞에서 또 새로</li>
-      <li>청중 입장에서 <strong>다음에 뭘 들어야 할지 모름</strong> — 한 번 듣고 나가버림</li>
-    </ul>
+    <div class="pain-stats">
+      <div class="pain-stat">
+        <div class="ps-num">6단계</div>
+        <div class="ps-label">매번 거쳐야 하는 단계 수</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">6시간</div>
+        <div class="ps-label">1세션 평균 작성 시간</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">3곳</div>
+        <div class="ps-label">노션·슬라이드 도구·발표 후 따로</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">다음<br>추천 X</div>
+        <div class="ps-label">청중 흐름 끊김</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="step" id="step-02">
+<!-- Chapter 2: 솔루션 -->
+<section class="chapter" id="chapter-2">
   <div class="container">
-    <div class="step-num">02</div>
-    <h2 class="step-title">어떻게 풀었나</h2>
-    <p class="step-sub">실제 겪은 시행착오</p>
+    <div class="chapter-label">Chapter 2</div>
+    <h2 class="chapter-title">솔루션: 자료 → 14장 → 자동 정리, 3단계 자동화</h2>
+    <p class="chapter-intro"><strong>사용자는 노션 일정함에서 세션 한 번만 고르면</strong> 자료·청중·다음 추천이 한 번에 채워지고, 14장 슬라이드가 자동 생성됩니다.</p>
+
+    <div class="flow-horizontal">
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 1단계: 자료·일정</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/notion.png" alt="Notion">
+        </div>
+        <h4 class="h-title">Notion</h4>
+        <div class="h-feature">자료함·일정함 한 곳에</div>
+        <div class="h-feature">세션 1개 클릭으로 자동 채움</div>
+      </div>
+
+      <div class="arrow-x">→</div>
+
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 2단계: 14장 생성</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/claude-code.png" alt="Claude Code">
+        </div>
+        <h4 class="h-title">Claude Code</h4>
+        <div class="h-feature">발표용 14장 자동 구성</div>
+        <div class="h-feature">길이별 자동 분배 (15~60분)</div>
+      </div>
+
+      <div class="arrow-x">→</div>
+
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 3단계: 자동 정리</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/notion.png" alt="Notion">
+        </div>
+        <h4 class="h-title">Notion 자동</h4>
+        <div class="h-feature">슬라이드 주소·상태 자동 기록</div>
+        <div class="h-feature">다음 추천 세션 자동 연결</div>
+      </div>
+    </div>
+
+    <!-- 단계별 상세 -->
+    <div class="stage-detail">
+      <span class="stage-label">(1) 자료·일정 — Notion</span>
+      <h3 class="stage-heading">노션 자료함·일정함이 슬라이드의 입력 칸</h3>
+      <p class="stage-body">노션 자료함에 모아둔 정리된 글·인터뷰·메모가 슬라이드의 콘텐츠 입력이 됩니다. 노션 일정함에서 세션 1개 클릭하면 제목·청중·받고 싶은 행동·자료가 자동으로 폼에 채워집니다. <strong>모바일에서 미리 세션 정해두고 컴퓨터 앞에서 [생성] 한 번</strong>이면 끝.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — 노션 일정함 + 새 슬라이드 폼]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>노션 자료함·일정함이 슬라이드 입력</li>
+          <li>세션 1개 클릭 → 제목·청중·자료·다음 추천 자동 채움</li>
+          <li>모바일에서도 세션 사전 결정 가능</li>
+          <li>유형(세션·워크샵·세미나·특강·라이브) + 난이도 + 다음 추천 자동 구조</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-detail">
+      <span class="stage-label">(2) 14장 생성 — Claude Code</span>
+      <h3 class="stage-heading">14장 흐름 자동 구성 — 15분이든 60분이든 알아서</h3>
+      <p class="stage-body">슬라이드 14장의 흐름을 발표 유형에 맞춰 자동 구성합니다: 인사 → 후킹 → 고민 짚기 → 공감 → 질문 → 컨셉 → 증거 → 숫자 → 사례 → 비포·애프터 → 시연 → 보상 예고 → 전환 → 다음 추천. 발표 길이에 따라 슬라이드별 시간이 자동으로 분배됩니다.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — 14장 자동 구성 화면]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>14장 표준 흐름 자동 구성 (웨비나·워크샵·강의·라이브)</li>
+          <li>길이별 자동 시간 분배 (15분 / 30분 / 60분)</li>
+          <li>마지막 슬라이드에 다음 추천 세션 자동 삽입</li>
+          <li>브랜드 톤·말투 자동 주입</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-detail">
+      <span class="stage-label">(3) 자동 정리 — Notion</span>
+      <h3 class="stage-heading">발표 끝나면 슬라이드 주소가 노션에 자동으로 다시 적힘</h3>
+      <p class="stage-body">슬라이드 생성 → 노션 일정함의 해당 세션에 슬라이드 주소·상태가 자동 기록됩니다. 발표 완료·예정·당일 뱃지가 알아서 갱신되고, 노션에서 발표일 바꾸면 [🔄 노션 동기화] 한 번으로 카드가 따라옵니다.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — 슬라이드 카드 목록·상태 뱃지]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>슬라이드 주소·상태 노션 자동 기록</li>
+          <li>발표 완료·예정·당일 뱃지 자동 갱신</li>
+          <li>노션 일정 변경 시 [🔄 동기화] 한 번으로 반영</li>
+          <li>세션끼리 "다음 추천" 연결 자동 유지</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 2.5: 시행착오 -->
+<section class="chapter" id="chapter-trial">
+  <div class="container">
+    <div class="chapter-label">Chapter 2.5</div>
+    <h2 class="chapter-title">만들면서 배운 것 — 실제 시행착오</h2>
+    <p class="chapter-intro">슬라이드 흐름·시리즈 구조·자료 정제·미리보기 — 5가지 시행착오를 거쳐 지금 구조가 나왔어요.</p>
 
     <div class="trial-list">
 
       <div class="trial-card">
         <div class="ti"><div class="tn">1</div><div class="tt">워크샵용 패턴만 만들었더니 웨비나·라이브가 안 됨</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>워크샵용 슬라이드 패턴(목차·챕터·본문·요약·마무리)만 만들고 끝내려 했음. 그런데 웨비나·라이브·세미나는 결이 전혀 다름 — 청중을 끌어들이고 설득하는 흐름이 따로 필요</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>워크샵용 슬라이드 패턴(목차·챕터·본문·요약·마무리)만 만듦. 웨비나·라이브·세미나는 결이 전혀 다름 — 청중을 끌어들이고 설득하는 흐름이 따로 필요</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span>슬라이드 흐름을 <strong>14장으로 다시 짬</strong> — 인사 → 후킹 → 고민 짚기 → 공감 → 질문 → 컨셉 → 증거 → 숫자 → 사례 → 비포·애프터 → 시연 → 보상 예고 → 전환 → 다음 추천. 발표가 15분이든 60분이든 알아서 분배해줌</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>슬라이드 흐름을 <strong>14장으로 다시 짬</strong> — 인사 → 후킹 → 고민 → 공감 → 질문 → 컨셉 → 증거 → 숫자 → 사례 → 비포·애프터 → 시연 → 보상 예고 → 전환 → 다음 추천. 15분이든 60분이든 알아서 분배</div>
         </div>
       </div>
 
       <div class="trial-card">
         <div class="ti"><div class="tn">2</div><div class="tt">"5주 시리즈" 식으로 묶었더니 청중이 부담</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>"SEO 마스터 5주" 식으로 1회차·2회차·3회차 묶어버림. 앞 회차 안 들으면 다음 이해가 어려워서, 중간에 합류하는 사람은 진입 자체가 부담</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>"SEO 마스터 5주" 식으로 1·2·3회차 묶음. 앞 회차 안 들으면 다음 이해가 어려워서, 중간 합류자는 진입 부담</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>한 번에 하나씩 끝나는 '세션' 단위</strong>로 바꿈. 세션끼리는 "같이 들으면 좋은 세션" 연결만 둠. 청중은 관심 주제만 골라 듣고, 마지막 슬라이드에 다음 추천 세션이 자동으로 떠줌</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>한 번에 하나씩 끝나는 '세션' 단위</strong>로. 세션끼리는 "같이 들으면 좋은 세션" 연결만 둠. 청중은 관심 주제만 골라 듣고, 마지막 슬라이드에 다음 추천이 자동</div>
         </div>
       </div>
 
       <div class="trial-card">
         <div class="ti"><div class="tn">3</div><div class="tt">노션 자료함에 정리된 글만 넣을 수 있다고 가정</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>노션 자료함에는 이미 잘 정리된 글만 들어간다고 가정. 그런데 인터뷰·대화·메모 같은 날것은 슬라이드로 못 가져옴 — 매번 손으로 정리해서 다시 넣어야</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>노션 자료함에는 잘 정리된 글만 들어간다고 가정. 인터뷰·대화·메모 같은 날것은 슬라이드로 못 가져옴 — 매번 손으로 정리해서 다시 넣어야</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span>날것을 자료함에 넣기 전에 <strong>정제하는 단계를 따로 분리</strong>. 인터뷰·대화 → 핵심가치·페인·시행착오·비포애프터로 자동 구조화 → 자료함에 정돈된 페이지로 들어감. 이 정제 도구는 별도로 만들기로</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>날것을 자료함에 넣기 전 <strong>정제하는 단계를 따로 분리</strong>. 인터뷰·대화 → 핵심가치·페인·시행착오·비포애프터로 자동 구조화 → 자료함에 정돈된 페이지로</div>
         </div>
       </div>
 
       <div class="trial-card">
         <div class="ti"><div class="tn">4</div><div class="tt">미리보기가 정사각형으로 나오고 줄바꿈도 깨짐</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>대시보드 미리보기를 16:9로 맞추는 표준 방법을 썼는데 환경에 따라 비율이 정사각형 가까이로 깨짐. 안의 글자도 풀스크린이랑 줄바꿈이 달라서 미리보기랑 실제가 안 맞음</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>대시보드 미리보기를 16:9로 맞추는 표준 방법을 썼는데 환경에 따라 비율이 정사각형 가까이로 깨짐. 글자 줄바꿈도 풀스크린이랑 달라서 미리보기랑 실제가 안 맞음</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span>미리보기 박스 자체를 <strong>고정 크기로 두고 통째로 축소</strong>하는 방식으로 바꿈. 어디서 봐도 정확히 16:9, 실제 발표 화면이랑 줄바꿈도 똑같음</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>미리보기 박스를 <strong>고정 크기로 두고 통째로 축소</strong>하는 방식. 어디서 봐도 정확히 16:9, 줄바꿈도 실제 발표 화면과 똑같음</div>
         </div>
       </div>
 
@@ -328,7 +240,7 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 12p
         <div class="tarrow">
           <div class="tbox"><span class="tlabel">처음에는</span>노션 일정함에 "회차"·"시리즈명" 필드를 필수로 둠. 모든 세션이 시리즈 구조에 강제로 들어가서, 매주 다른 주제로 운영하면 빈 값만 쌓임</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span>"회차"·"시리즈명" 빼버리고 <strong>"유형"(세션·워크샵·세미나·특강·라이브) + "난이도"(기초·중급·심화) + "다음 추천 세션"</strong> 으로 다시 설계. 이번 주는 SEO, 다음 주는 클로드 코드 — 매주 다른 주제로 가도 깔끔</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>"회차"·"시리즈명" 빼고 <strong>"유형"(세션·워크샵·세미나·특강·라이브) + "난이도"(기초·중급·심화) + "다음 추천 세션"</strong>으로 재설계. 매주 다른 주제로 가도 깔끔</div>
         </div>
       </div>
 
@@ -336,67 +248,75 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 12p
   </div>
 </section>
 
-<section class="step" id="step-03">
+<!-- Chapter 3: 결과 -->
+<section class="chapter" id="chapter-3">
   <div class="container">
-    <div class="step-num">03</div>
-    <h2 class="step-title">실제 동작 화면</h2>
-    <p class="step-sub">노션에서 세션 한 번 고르면 → 14장 완성 → 발표 → 노션에 자동 정리</p>
+    <div class="chapter-label">Chapter 3</div>
+    <h2 class="chapter-title">결과 — 1세션 6시간 → 15분, 노션 한 흐름</h2>
+    <p class="chapter-intro">매주 발표마다 매번 처음부터 만들던 흐름이, 노션 한 번 클릭으로 14장이 나오는 흐름으로 바뀌었습니다.</p>
 
-    <div class="screen-card">
-      <span class="label">새 슬라이드 만들기 — 노션에서 한 번 고르면 14장 완성</span>
-      <h4>한 화면에서 — 종류·청중·자료·받고 싶은 행동·노션 세션</h4>
-      <p>① 종류·테마(웨비나/워크샵/강의 × 기본/라이트) ② 발표 길이 ③ 제목·청중 ④ 청중에게 받고 싶은 행동(SNS 후기·뉴스레터·구매 등 6가지) ⑤ 단계별 보상(원하면 직접 쓰고, 비우면 AI가 알아서) ⑥ 참고 자료(노션 자료함에서 체크) ⑦ 📅 노션 일정함에서 세션 한 번 클릭 → ③~⑥이 한 번에 채워짐 + 다음 추천 세션도 자동으로 마지막 슬라이드에 들어감 → [슬라이드 생성] → 14장 완성 → 노션 일정함에 슬라이드 주소·상태가 자동으로 다시 적힘.</p>
-      <div class="placeholder-img">[스크린샷 자리 — 새 슬라이드 폼 + 노션 세션 드롭다운]</div>
+    <h3 class="result-section-h">(1) 단계별 시간 변화</h3>
+    <p class="result-body">기존에는 자료 정리·슬라이드 만들기·발표 후 정리가 각각 따로 시간이 들었습니다. 이제는 노션·Claude·노션이 한 흐름.</p>
+
+    <div class="result-cards">
+      <div class="result-card">
+        <span class="rc-badge">✦ 1단계: 자료·일정</span>
+        <img class="rc-tool-img" src="assets/icons/notion.png" alt="Notion">
+        <div class="rc-tool">Notion</div>
+        <div class="rc-before">30분</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">1분</div>
+      </div>
+
+      <div class="result-card">
+        <span class="rc-badge">✦ 2단계: 슬라이드 생성</span>
+        <img class="rc-tool-img" src="assets/icons/claude-code.png" alt="Claude Code">
+        <div class="rc-tool">Claude Code</div>
+        <div class="rc-before">5시간</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">10분</div>
+      </div>
+
+      <div class="result-card">
+        <span class="rc-badge">✦ 3단계: 정리</span>
+        <img class="rc-tool-img" src="assets/icons/notion.png" alt="Notion">
+        <div class="rc-tool">Notion</div>
+        <div class="rc-before">30분</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">자동</div>
+      </div>
     </div>
 
-    <div class="screen-card">
-      <span class="label">슬라이드 목록 — 발표일·청중·상태 한눈에</span>
-      <h4>각 카드에 발표일·청중·상태 뱃지. 노션에서 발표일 바꾸면 [🔄 노션 동기화] 한 번이면 됨</h4>
-      <p>카드 클릭 → 편집 화면. 우상단 🗑 → 슬라이드 묶음 삭제. 상태 뱃지는 알아서: <strong>발표 완료</strong>(지난 날짜) / <strong>당일</strong>(빨강으로 깜빡임) / <strong>발표 예정</strong>(파랑). 노션 일정함에서 발표일 바꾸고 → <strong>🔄 노션 동기화</strong> 누르면 → 카드도 바로 따라감.</p>
-      <div class="placeholder-img">[스크린샷 자리 — 카드 목록 + 상태 뱃지]</div>
+    <p class="result-body">단순히 시간이 줄어든 것뿐 아니라, 노션·슬라이드·발표 후 정리가 한 흐름이라 "결과물이 어디 갔지?" 헤매는 일이 사라졌습니다. 청중에게도 다음 추천 세션이 자동으로 이어져요.</p>
+
+    <h3 class="result-section-h">(2) 운영자 인터뷰</h3>
+    <div class="interview">
+      <div class="iv-item">
+        <div class="iv-q">Q. 도입 전 가장 큰 어려움은?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "매주 발표인데 매번 슬라이드 14장을 손으로 만들었어요. 노션에 자료는 다 있는데 슬라이드로 옮기는 것만 4~5시간. 발표 끝나면 결과물도 흩어져서 다음 세션과 안 이어졌어요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 도입 후 가장 크게 달라진 점은?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "노션에서 세션 한 번 고르면 14장이 15분 안에 나와요. 모바일에서 미리 세션 정해두고 컴퓨터 앞에서 [생성] 한 번이면 끝. 발표 끝나면 슬라이드 주소까지 노션에 자동으로 적혀요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 14장 흐름은 어떻게 만들어졌나요?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "처음엔 워크샵 패턴만 만들었는데 웨비나·라이브가 안 됐어요. 5번 시행착오 거쳐서 인사→후킹→공감→증거→사례→시연→전환→다음 추천 14장으로 자리잡았어요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 어떤 사업자에게 추천하고 싶나요?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "매주 발표·웨비나·라이브 하시는 1인 운영자분들. 슬라이드 매번 손으로 만드는 시간만 줄여도 본업에 시간 크게 늘어나요."</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="before-section">
-  <div class="container">
-    <span class="badge-line">BEFORE</span>
-    <h2>기존엔 이렇게 만들었어요</h2>
-    <p class="sub">세 곳을 따로 오가며 매번 처음부터</p>
-
-    <div class="before-row">
-      <div class="before-step-box">
-        <div class="num">1</div>
-        <div class="tool">노션</div>
-        <div class="desc">자료를 손으로 정리</div>
-      </div>
-      <div class="arrow-x">→</div>
-      <div class="before-step-box">
-        <div class="num">2</div>
-        <div class="tool">슬라이드 도구</div>
-        <div class="desc">복붙·디자인·말투 통일 4~6시간</div>
-      </div>
-      <div class="arrow-x">→</div>
-      <div class="before-step-box">
-        <div class="num">3</div>
-        <div class="tool">발표 후</div>
-        <div class="desc">결과물은 어디 갔는지 모름</div>
-      </div>
-    </div>
-
-    <div class="before-summary-bar">
-      <strong>3곳 오가며 · 한 세션 6시간</strong>
-      <span class="sep">|</span>
-      매번 복붙하고 · 손으로 다시 정리하고 · 다음 세션과 안 이어짐
-    </div>
-  </div>
-</section>
-
+<!-- AFTER -->
 <section class="after-section">
   <div class="container">
-    <span class="badge">AFTER</span>
-    <h2>이제는 한 흐름으로</h2>
-    <p class="sub">노션과 대시보드가 알아서 서로 채워줌</p>
+    <span class="badge">결과</span>
+    <h2>6시간 → 15분, 노션 한 흐름</h2>
+    <p class="sub">슬라이드·일정·다음 추천 다 연결</p>
 
     <div class="ba-grid">
       <div class="ba-card">
@@ -428,13 +348,13 @@ footer { padding: 32px 0; text-align: center; color: var(--gray); font-size: 12p
 
     <div class="cta-band">
       <h3>슬라이드 14장 → 15분으로</h3>
-      <p>노션 자료 → 세션 → 슬라이드, 한 흐름으로</p>
+      <p>노션 자료 → 세션 → 슬라이드, 한 흐름</p>
       <button>todoto slide 둘러보기 →</button>
     </div>
   </div>
 </section>
 
-<footer>todoto slide · case study · 2026-05-13</footer>
+<footer>todoto slide · case study · 2026-05-14</footer>
 
 </body>
 </html>

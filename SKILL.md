@@ -1,6 +1,6 @@
 # todoto case studies — 제작 가이드
 
-todoto 운영 도구 4개(alimtalk·hub·landing·sns)의 케이스 스터디를 동일한 톤·구조·디자인으로 유지하기 위한 가이드. flow 패턴(세로 플로우차트 + 가로 3단계 + 단계별 상세 + 결과 카드 + 인터뷰) 기준.
+todoto 운영 도구 5개(alimtalk·hub·landing·sns·slide)의 케이스 스터디를 동일한 톤·구조·디자인으로 유지하기 위한 가이드. flow 패턴(세로 플로우차트 + 가로 3단계 + 단계별 상세 + 결과 카드 + 인터뷰) 기준.
 
 새 case 추가·기존 case 수정 시 이 문서를 먼저 읽고 작성한다.
 
@@ -136,6 +136,7 @@ case-studies/
 | **hub** | Claude Code (본문·HTML) | Reviewer ✓ (검수) | 아임웹 (발행) |
 | **landing** | STEP 0 (기본 정보) | Claude Code (섹션 카피) | 아임웹 (발행) |
 | **sns** | GitHub Actions (수집) | Notion (저장) | Claude Code (분석) |
+| **slide** | Notion (자료·일정) | Claude Code (14장 생성) | Notion (자동 정리) |
 
 ## 모바일 반응
 
