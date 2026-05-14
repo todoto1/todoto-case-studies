@@ -158,7 +158,7 @@
       <span class="stage-label">(1) 자동 수집 — GitHub Actions</span>
       <h3 class="stage-heading">PC가 꺼져 있어도 매시간 인스타 데이터 자동 수집</h3>
       <p class="stage-body">로컬 PC에서 매시간 스크립트를 돌리려면 PC가 항상 켜져 있어야 합니다. GitHub의 자동 시계(Actions cron)가 대신 매시간 인스타 Graph API를 호출하고 노션에 저장합니다. <strong>외출·여행 중에도 데이터는 끊김 없이 쌓이고</strong>, 자정 누락 시 자동 복구 로직까지.</p>
-      <div class="stage-screenshot">[스크린샷 자리 — GitHub Actions 자동 수집 로그]</div>
+      <div class="stage-screenshot"><span class="ph-text">[스크린샷 자리 — GitHub Actions 자동 수집 로그]</span><img src="assets/screenshots/sns/01-github.png" alt="GitHub Actions 자동 수집 로그" onload="this.previousElementSibling.style.display='none';this.parentElement.classList.add('has-image');" onerror="this.style.display='none';"></div>
       <div class="stage-aside">
         <h4>핵심 동작</h4>
         <ul>
@@ -174,7 +174,7 @@
       <span class="stage-label">(2) 영구 저장 — Notion 4-DB</span>
       <h3 class="stage-heading">본인 노션에 누적 — 시계열 영구 보존, 락인 없음</h3>
       <p class="stage-body">Posts(게시물별 16컬럼) · AccountDaily(계정 단위 13메트릭) · Reports(인사이트 누적) · Demographics(지역·연령·성별 스냅샷) 4개 DB에 시계열로 누적. <strong>각 브랜드가 본인 노션 워크스페이스에 저장</strong>해서 데이터 락인 없이 운영합니다. 인스타 자체 데이터가 1주 후 사라져도 우리 노션은 영구.</p>
-      <div class="stage-screenshot">[스크린샷 자리 — 노션 4-DB 화면]</div>
+      <div class="stage-screenshot"><span class="ph-text">[스크린샷 자리 — 노션 4-DB 화면]</span><img src="assets/screenshots/sns/02-notion.png" alt="노션 4-DB 화면" onload="this.previousElementSibling.style.display='none';this.parentElement.classList.add('has-image');" onerror="this.style.display='none';"></div>
       <div class="stage-aside">
         <h4>핵심 동작</h4>
         <ul>
@@ -190,7 +190,7 @@
       <span class="stage-label">(3) AI 분석 — Claude Code</span>
       <h3 class="stage-heading">AI 결론에 우리 메트릭 수치 인용 강제</h3>
       <p class="stage-body">일반 AI는 "스크롤 멈춤 유발", "이목 집중" 같은 콘텐츠 마케팅 격언만 반환합니다. Claude Code에는 <strong>"추측 금지·우리 수치 인용 강제" 규칙이 자동 주입</strong>되어 모든 결론에 "저장률 4.5%·평균 시청 22초·저장 35회" 식으로 우리 데이터를 인용합니다. 상위 25% 게시물의 후크·길이·이모지·CTA 패턴도 매주 자동 학습.</p>
-      <div class="stage-screenshot">[스크린샷 자리 — Claude Code 인사이트 화면]</div>
+      <div class="stage-screenshot"><span class="ph-text">[스크린샷 자리 — Claude Code 인사이트 화면]</span><img src="assets/screenshots/sns/03-claude-code.png" alt="Claude Code 인사이트 화면" onload="this.previousElementSibling.style.display='none';this.parentElement.classList.add('has-image');" onerror="this.style.display='none';"></div>
       <div class="stage-aside">
         <h4>핵심 동작</h4>
         <ul>
