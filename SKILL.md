@@ -184,6 +184,67 @@ git -C "..." push
 
 GitHub Pages가 1~2분 후 자동 재배포.
 
+## 외부 공유 워크플로우 (GitHub Pages + 아임웹)
+
+### 1. GitHub Pages — 메인 호스팅
+
+URL: `https://todoto1.github.io/todoto-case-studies/`
+
+- 코드 push만 하면 1~2분 후 자동 재배포
+- 외부 사람에게 URL만 보내면 됨
+- 카톡·DM·메일 공유에 그대로 사용
+
+### 2. 카톡·SNS 미리보기 — OG meta tags
+
+각 HTML head에 `<meta property="og:...">` 박힘 (적용 완료).
+
+활성화 조건:
+- `assets/og-default.png` (1200×630px 이미지) 추가 필요 — 사용자 액션
+- 추가 후 카톡에 URL 붙이면 자동 미리보기 카드 표시
+- 파비콘은 `assets/icons/favicon.png` 추가하면 브라우저 탭에 표시
+
+case별 다른 이미지 원하면 `og-alimtalk.png` 등 분리 + 각 HTML의 `og:image` 경로 갱신.
+
+### 3. 아임웹 임베드 — iframe 방식 (권장)
+
+아임웹 본문에서 외부 CSS·JS는 작동 안 함. 가장 깔끔한 방법은 iframe:
+
+```html
+<iframe src="https://todoto1.github.io/todoto-case-studies/alimtalk.html"
+        width="100%"
+        height="3000"
+        frameborder="0"
+        style="border:0;"></iframe>
+```
+
+- 한 줄로 GitHub 페이지 그대로 임베드
+- GitHub에서 수정하면 아임웹 자동 반영
+- height는 페이지 길이에 맞춰 조정 (각 case 2500~3500px 권장)
+
+### 4. 아임웹 인라인 — 통합 디자인 원할 때 (선택)
+
+iframe 안 쓰고 아임웹 페이지에 완전 흡수하고 싶으면:
+
+1. style.css 전체 내용을 HTML `<style>` 블록으로 인라인화
+2. 모든 img·assets 경로를 절대 URL로 변경 (예: `https://todoto1.github.io/todoto-case-studies/assets/icons/claude-code.png`)
+3. 아임웹 본문 인라인 HTML에 붙여넣기
+
+작업량: 1편당 약 10분. 추후 GitHub 갱신해도 아임웹은 별도 수정 필요.
+
+### 5. 표준 작업 흐름
+
+```
+콘텐츠 수정 (각 HTML)
+    ↓
+git push → GitHub Pages 자동 재배포 (1~2분)
+    ↓
+[외부 공유] URL 그대로 보냄 (카톡·DM·메일)
+    ↓
+[아임웹] iframe만 그대로 유지 — 자동 반영
+```
+
+수정·배포 분리: GitHub에서 수정 → 아임웹은 건드릴 일 없음.
+
 ## 향후 보강 영역
 
 - 실제 스크린샷 첨부 (placeholder 자리)
