@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>todoto alimtalk — 케이스 스터디</title>
+<title>todoto alimtalk — 플로우차트 시안</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav class="case-nav">
   <a href="index.html">🏠 대시보드</a>
-  <a href="alimtalk.html" class="active">alimtalk</a>
+  <a href="alimtalk.html">alimtalk</a>
   <a href="hub.html">hub</a>
   <a href="landing.html">landing</a>
   <a href="sns.html">sns</a>
@@ -27,7 +27,7 @@
       <li>카카오 검수 신청도 한 번 클릭으로</li>
       <li>발송 결과는 노션에 자동으로 정리</li>
     </ul>
-    <a href="#step-01" class="cta">전체 스토리 보기 →</a>
+    <a href="#chapter-1" class="cta">전체 스토리 보기 →</a>
   </div>
 </section>
 
@@ -38,37 +38,201 @@
   </div>
 </section>
 
-<section class="step" id="step-01">
+<!-- Chapter 1: 문제 -->
+<section class="chapter" id="chapter-1">
   <div class="container">
-    <div class="step-num">01</div>
-    <h2 class="step-title">왜 만들었나</h2>
-    <p class="step-sub">1인 브랜드 운영자의 5개 도구 분산 문제</p>
+    <div class="chapter-label">Chapter 1</div>
+    <h2 class="chapter-title">문제: 알림톡 1번 보내려고 8단계, 30분 이상</h2>
+    <p class="chapter-intro">신청자 정리·카피·검수·발송·결과 업데이트 — 한 흐름이 끊긴 도구 5개 사이를 매번 오갔습니다.</p>
 
-    <div class="case-card">
-      <div class="who">실제 운영 상황</div>
-      <div class="quote">"워크샵 신청자에게 알림톡 1번 보내려면 — 노션에서 신청자 정리 → ChatGPT로 글 쓰기 → 카카오 규칙 다시 검색 → 솔라피 화면에 변수 넣고 등록 → 검수 통과 확인 → 솔라피에서 직접 발송 → 다시 노션 가서 누구한테 갔는지 적기. <strong>매번 30분 이상</strong>이 들었어요."</div>
+    <div class="flow-board with-total">
+      <div class="flow-cap-wrap"><span class="flow-cap">시작</span></div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">1</span>
+        <span class="fbtext">노션에 신청자 정리</span>
+        <span class="fbtime">10분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">2</span>
+        <span class="fbtext">Claude로 카피 초안</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">3</span>
+        <span class="fbtext">카카오 검수 규칙 매번 검색</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">4</span>
+        <span class="fbtext">솔라피 콘솔에서 변수 입력·등록</span>
+        <span class="fbtime">5분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">5</span>
+        <span class="fbtext">검수 통과 수동 확인</span>
+        <span class="fbtime">10분~</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">6</span>
+        <span class="fbtext">솔라피에서 직접 발송</span>
+        <span class="fbtime">3분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">7</span>
+        <span class="fbtext">실패한 사람 솔라피에서 확인</span>
+        <span class="fbtime">3분</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-box">
+        <span class="fbnum">8</span>
+        <span class="fbtext">노션 결과 손으로 정리</span>
+        <span class="fbtime">10분~</span>
+      </div>
+      <div class="flow-link"></div>
+
+      <div class="flow-cap-wrap"><span class="flow-cap">종료</span></div>
+
+      <div class="flow-total">
+        <div class="flow-total-badge">다음 발송 매번 반복<br><span style="font-size:11px;font-weight:600;display:block;margin-top:4px;">워크샵·콘텐츠·마케팅마다</span></div>
+      </div>
     </div>
 
-    <h3 style="font-size:17px;font-weight:700;margin-top:24px;">대표 페인 포인트</h3>
-    <ul class="pain-list">
-      <li>보낼 때마다 <strong>카카오 검수 규칙을 다시 검색</strong> — 어떤 단어가 광고로 걸리는지·글자 수는 몇 자까지인지 매번 확인</li>
-      <li><strong>알림톡과 친구톡이 만드는 방식이 완전 다름</strong> — 친구톡만 8가지 형식인데 각각 규칙이 또 다름</li>
-      <li>같은 항목인데 <strong>노션·솔라피·입력 폼 이름이 따로</strong> — 한 번 오타 나면 발송 자체가 안 됨</li>
-      <li>발송이 끝나도 <strong>"누구한테 갔는지"는 노션에 손으로 다시 적어줘야</strong></li>
-      <li>실패한 사람을 보려면 <strong>솔라피 화면을 또 따로 켜야</strong> — 한 흐름이 안 됨</li>
-    </ul>
-
-    <p style="margin-top:24px;color:var(--gray);font-size:14px;">
-      <span class="todo">보충 필요</span> 처음 만들기 시작한 구체적 계기·시기
-    </p>
+    <div class="pain-stats">
+      <div class="pain-stat">
+        <div class="ps-num">8단계</div>
+        <div class="ps-label">매번 거쳐야 하는 단계 수</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">30분+</div>
+        <div class="ps-label">1회 발송 평균 소요</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">5개</div>
+        <div class="ps-label">오가는 도구 수</div>
+      </div>
+      <div class="pain-stat">
+        <div class="ps-num">1~3일</div>
+        <div class="ps-label">카카오 검수 대기</div>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="step" id="step-02">
+<!-- Chapter 2: 솔루션 (가로 3단계) -->
+<section class="chapter" id="chapter-2">
   <div class="container">
-    <div class="step-num">02</div>
-    <h2 class="step-title">어떻게 풀었나</h2>
-    <p class="step-sub">실제 겪었던 시행착오</p>
+    <div class="chapter-label">Chapter 2</div>
+    <h2 class="chapter-title">솔루션: 카피 → 발송 → 정리, 3단계 자동화</h2>
+    <p class="chapter-intro">단순 반복 작업에 사람의 개입을 0으로 만드는 것이 기획의 핵심. <strong>사용자는 [발송하기] 한 번만 누르면</strong> AI·솔라피·노션이 자동으로 이어집니다.</p>
+
+    <div class="flow-horizontal">
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 1단계: AI 카피 생성</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/claude-code.png" alt="Claude Code">
+        </div>
+        <h4 class="h-title">Claude Code</h4>
+        <div class="h-feature">5개 AI 중 용도별 자동 선택</div>
+        <div class="h-feature">자가 검수 (광고·글자수·톤)</div>
+      </div>
+
+      <div class="arrow-x">→</div>
+
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 2단계: 등록·발송</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/solapi.png" alt="솔라피">
+        </div>
+        <h4 class="h-title">솔라피</h4>
+        <div class="h-feature">자동 등록·검수 신청</div>
+        <div class="h-feature">즉시·예약·자동 발송 선택</div>
+      </div>
+
+      <div class="arrow-x">→</div>
+
+      <div class="flow-h-step">
+        <span class="h-badge">✦ 3단계: 결과 정리</span>
+        <div class="h-tool-mark">
+          <img src="assets/icons/notion.png" alt="Notion">
+        </div>
+        <h4 class="h-title">Notion</h4>
+        <div class="h-feature">발송 결과 자동 업데이트</div>
+        <div class="h-feature">영구 아카이브 저장</div>
+      </div>
+    </div>
+
+    <!-- 단계별 상세 -->
+    <div class="stage-detail">
+      <span class="stage-label">(1) AI 카피 생성·검수</span>
+      <h3 class="stage-heading">Claude Code가 매번 카피 룰 외울 일을 없앴습니다</h3>
+      <p class="stage-body">사용자는 어떤 발송 유형인지(워크샵·콘텐츠·마케팅·직접)만 고르면 됩니다. 5개 AI 에이전트가 알림톡·친구톡 8형식을 자동으로 구분하고 카피를 만듭니다. <strong>한 번 저장해둔 브랜드 톤·보이스·금지 단어·CTA 스타일이 모든 카피 생성에 자동으로 주입</strong>되어 매번 같은 브랜드 톤이 유지됩니다. 광고 표현·글자수·변수 형식·머리말 규칙은 즉시 검사하고, AI 톤·의미 평가는 글이 흘러나오듯 점진적으로 표시됩니다.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — Claude Code 카피 생성·검수 화면 (브랜드 설정 탭 포함)]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>5개 AI 에이전트 자동 선택 (알림톡·친구톡 자유형/템플릿형 + 검수 2종)</li>
+          <li><strong>브랜드 프로필 자동 주입</strong> — 톤·보이스·페르소나·금지 단어·CTA 스타일</li>
+          <li>광고·글자수·변수·머리말 즉시 검사 (수십 가지 카카오 규칙 자동)</li>
+          <li>AI 톤·의미 평가 스트리밍 (사용자 대기 시간 단축)</li>
+          <li>발송 유형별 자유 필드 자동 세팅 (이름 = 변수 = 노션 컬럼명)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-detail">
+      <span class="stage-label">(2) 등록·발송</span>
+      <h3 class="stage-heading">솔라피 콘솔에 들어갈 일이 없어요</h3>
+      <p class="stage-body">검수 통과된 카피는 솔라피에 자동 등록되고 카카오에 검수 신청까지 자동으로 요청합니다. 발송 캠페인 모달에서 즉시·예약·자동 중 선택만 하면 됩니다. 노션에서 받는 사람을 필터로 고르고, 시점별 변수 매핑까지 한 모달 안에서 끝납니다.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — 솔라피 캠페인 5단계 모달]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>솔라피 자동 등록 + 카카오 검수 자동 신청</li>
+          <li>발송 캠페인 5단계 마법사 (템플릿·노션·필터·발송·콜백)</li>
+          <li>즉시 발송 / 예약 / 자동(정기) 중 선택</li>
+          <li>실패한 사람까지 결과 화면 한눈에</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stage-detail">
+      <span class="stage-label">(3) 결과 정리</span>
+      <h3 class="stage-heading">노션에 손으로 결과를 적을 일이 없어요</h3>
+      <p class="stage-body">발송이 끝나면 노션의 row가 자동으로 업데이트됩니다. 발송 시각·결과·재시도 여부까지 사용자가 매핑한 컬럼에 따라 자동 정리. 풀 스냅샷이 영구 아카이브로 저장되어 다음 카피의 학습 데이터로도 활용됩니다.</p>
+      <div class="stage-screenshot">[스크린샷 자리 — 노션 결과 자동 정리]</div>
+      <div class="stage-aside">
+        <h4>핵심 동작</h4>
+        <ul>
+          <li>발송 성공·실패 row 자동 업데이트 (사용자 매핑 컬럼)</li>
+          <li>영구 아카이브 저장 (output/complete/ 풀 스냅샷)</li>
+          <li>다음 카피의 학습 데이터 1차 소스 (반려·승인 패턴)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 2.5: 시행착오 (만들면서 배운 것) -->
+<section class="chapter" id="chapter-trial">
+  <div class="container">
+    <div class="chapter-label">Chapter 2.5</div>
+    <h2 class="chapter-title">만들면서 배운 것 — 실제 시행착오</h2>
+    <p class="chapter-intro">한 번에 잘 된 게 아닙니다. 5가지 큰 시행착오를 거쳐 지금 구조가 나왔어요.</p>
 
     <div class="trial-list">
       <div class="trial-card">
@@ -81,9 +245,9 @@
       </div>
 
       <div class="trial-card">
-        <div class="ti"><div class="tn">2</div><div class="tt">친구톡 8가지 형식 — 규칙이 솔라피 문서 곳곳에 흩어져 있음</div></div>
+        <div class="ti"><div class="tn">2</div><div class="tt">친구톡 8가지 형식 — 규칙이 문서 곳곳에 흩어져 있음</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>친구톡도 알림톡처럼 한 가지인 줄 알았더니 8가지 형식이 각각 다름. 특히 "캐러셀 상품" 형식은 "위쪽에 버튼 넣으면 안 되고 항목 안에만 가능" 같은 규칙이 문서 여기저기 흩어져</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>친구톡도 알림톡처럼 한 가지인 줄. 특히 "캐러셀 상품" 형식은 "위쪽에 버튼 넣으면 안 되고 항목 안에만 가능" 같은 규칙이 문서 여기저기 흩어져</div>
           <div class="arrow-mid">→</div>
           <div class="tbox fix"><span class="tlabel">바꿨더니</span>8가지 각각의 <strong>입력 양식을 미리 코드로 만들어두고 자동 변환</strong>. 사용자는 형식만 고르면 끝</div>
         </div>
@@ -92,18 +256,18 @@
       <div class="trial-card">
         <div class="ti"><div class="tn">3</div><div class="tt">솔라피가 카카오 검수 신청까지는 자동으로 안 해줌</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>솔라피가 알림톡 등록은 자동인데 "이거 검수해 주세요"는 사용자가 솔라피 화면에 직접 들어가서 클릭해야. 자동화 흐름이 끊김</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>솔라피가 알림톡 등록은 자동인데 "이거 검수해 주세요"는 사용자가 솔라피 화면에 직접 들어가 클릭해야. 자동화 흐름이 끊김</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span>솔라피가 공식 안내한 통로 말고 <strong>내부 주소를 찾아내서 자동 신청</strong>. 등록 → 검수 → 통과까지 알림톡 안에서 한 번에</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span>솔라피가 공식 안내한 통로 말고 <strong>내부 주소를 찾아내서 자동 신청</strong>. 등록 → 검수 → 통과까지 한 번에</div>
         </div>
       </div>
 
       <div class="trial-card">
         <div class="ti"><div class="tn">4</div><div class="tt">같은 항목인데 이름이 3개 — 매번 헷갈림</div></div>
         <div class="tarrow">
-          <div class="tbox"><span class="tlabel">처음에는</span>노션은 "이름", 알림톡은 "user_name", 입력 폼은 "성함" — 한 항목인데 이름이 3개. 매번 매핑해줘야 하고 오타 한 번이면 안 보내짐</div>
+          <div class="tbox"><span class="tlabel">처음에는</span>노션은 "이름", 알림톡은 "user_name", 입력 폼은 "성함" — 한 항목인데 이름이 3개. 오타 한 번이면 안 보내짐</div>
           <div class="arrow-mid">→</div>
-          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>이름 하나로 통일</strong> — 폼에 "이름"이라 쓰면 노션도 "이름", 변수도 "이름". 발송 유형(워크샵·콘텐츠·마케팅)별 기본 항목도 자동으로 채워줌</div>
+          <div class="tbox fix"><span class="tlabel">바꿨더니</span><strong>이름 하나로 통일</strong> — 폼에 "이름"이라 쓰면 노션도 "이름", 변수도 "이름". 발송 유형별 기본 항목도 자동 채워줌</div>
         </div>
       </div>
 
@@ -116,74 +280,85 @@
         </div>
       </div>
     </div>
-
-    <p style="margin-top:24px;color:var(--gray);font-size:14px;">
-      <span class="todo">보충 필요</span> 다른 시행착오가 있다면
-    </p>
   </div>
 </section>
 
-<section class="step" id="step-03">
+<!-- Chapter 3: 결과 — 도구별 시간 절약 + 인터뷰 -->
+<section class="chapter" id="chapter-3">
   <div class="container">
-    <div class="step-num">03</div>
-    <h2 class="step-title">실제 동작 화면</h2>
-    <p class="step-sub">한 모달 안에서 모든 발송 흐름</p>
+    <div class="chapter-label">Chapter 3</div>
+    <h2 class="chapter-title">결과 — 알림톡 1회당 25분 절감, 도구 5개 → 1개</h2>
+    <p class="chapter-intro">3가지 도구를 한 흐름으로 묶어 단순 반복 작업에 사람 손이 들어갈 일을 없앴습니다.</p>
 
-    <div class="screen-card">
-      <span class="label">발송 캠페인 5단계 마법사</span>
-      <h4>한 모달에서 — 글·받는 사람·필터·발송 방식·결과 정리</h4>
-      <p>① 어떤 글·언제 보낼지 ② 노션에서 누구한테 보낼지 ③ 조건 필터(VIP만·신규만 등) ④ 즉시 발송·예약·자동 발송 중 선택 ⑤ 결과를 노션에 어떻게 자동으로 적을지. 확인 화면에서 시점별 받는 사람 수·총 건수 미리보기 → [🚀 최종 발송]. 결과 화면에 성공·실패한 사람까지 한눈에.</p>
-      <div class="placeholder-img">[스크린샷 자리 — 캠페인 5단계 마법사 (또는 GIF/짧은 영상)]</div>
+    <h3 class="result-section-h">(1) Claude Code · 솔라피 · Notion 도입 효과</h3>
+    <p class="result-body">기존에는 카피 작성·솔라피 등록·노션 정리에 각각 시간이 따로 들었습니다. 이제는 3 도구가 한 흐름 안에서 자동으로 이어지면서 1회 발송에 들이던 30분이 5분으로 줄어들었어요.</p>
+
+    <div class="result-cards">
+      <div class="result-card">
+        <span class="rc-badge">✦ 1단계: 카피 생성·검수</span>
+        <img class="rc-tool-img" src="assets/icons/claude-code.png" alt="Claude Code">
+        <div class="rc-tool">Claude Code</div>
+        <div class="rc-before">10분</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">2분</div>
+      </div>
+
+      <div class="result-card">
+        <span class="rc-badge">✦ 2단계: 등록·발송</span>
+        <img class="rc-tool-img" src="assets/icons/solapi.png" alt="솔라피">
+        <div class="rc-tool">솔라피</div>
+        <div class="rc-before">18분</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">1분</div>
+      </div>
+
+      <div class="result-card">
+        <span class="rc-badge">✦ 3단계: 결과 정리</span>
+        <img class="rc-tool-img" src="assets/icons/notion.png" alt="Notion">
+        <div class="rc-tool">Notion</div>
+        <div class="rc-before">12분</div>
+        <div class="rc-arrow">▼</div>
+        <div class="rc-after">자동</div>
+      </div>
+    </div>
+
+    <p class="result-body">단순히 시간이 줄어든 것뿐 아니라, 매번 솔라피·노션·ChatGPT를 다시 들여다보던 심리적 부담도 사라졌습니다. 워크샵 마지막 순간 변경 사항이 생겨도 5분이면 다시 발송할 수 있게 되었어요.</p>
+
+    <h3 class="result-section-h">(2) 운영자 인터뷰</h3>
+    <div class="interview">
+      <div class="iv-item">
+        <div class="iv-q">Q. 도입 전 가장 큰 어려움은 무엇이었나요?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "매번 카카오 검수 규칙을 다시 검색해야 했어요. 광고 단어로 걸리면 또 처음부터 카피를 수정해야 했고, 솔라피 콘솔에 들어가 변수 매핑하는 것도 매번 번거로웠어요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 도입 후 가장 크게 달라진 점은?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "한 화면에서 카피·검수·발송이 다 끝나요. 솔라피 콘솔이나 노션을 다시 안 들여다봐도 결과가 자동으로 정리돼서 본업에 더 집중할 수 있어요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 브랜드 톤 일관성은 어떻게 유지되나요?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "한 번 브랜드 톤·금지 단어·CTA 스타일을 저장해두면 매번 카피 생성에 자동으로 들어가요. 워크샵 안내인지 마케팅인지에 따라 톤이 자동으로 분리되니까 글마다 톤이 흔들리지 않아요."</div>
+      </div>
+      <div class="iv-item">
+        <div class="iv-q">Q. 어떤 사업자에게 추천하고 싶나요?</div>
+        <div class="iv-a"><span class="todo">보충 필요</span> 예: "워크샵·이벤트를 자주 여시는 1인 운영자분들. 한 달에 알림톡 5건만 보내도 누적되는 시간 차이가 정말 크거든요."</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="before-section">
-  <div class="container">
-    <span class="badge-line">BEFORE</span>
-    <h2>기존엔 이렇게 보냈어요</h2>
-    <p class="sub">도구 5개를 거쳐야 한 번 발송</p>
-
-    <div class="before-row">
-      <div class="before-step-box">
-        <div class="num">1</div>
-        <div class="tool">노션 + ChatGPT</div>
-        <div class="desc">신청자 정리 + 글 초안</div>
-      </div>
-      <div class="arrow-x">→</div>
-      <div class="before-step-box">
-        <div class="num">2</div>
-        <div class="tool">솔라피 화면</div>
-        <div class="desc">변수 입력·검수·발송</div>
-      </div>
-      <div class="arrow-x">→</div>
-      <div class="before-step-box">
-        <div class="num">3</div>
-        <div class="tool">노션</div>
-        <div class="desc">결과를 손으로 다시 적기</div>
-      </div>
-    </div>
-
-    <div class="before-summary-bar">
-      <strong>총 8단계</strong>
-      <span class="sep">|</span>
-      도구 옮기고 · 복붙하고 · 다시 정리하고
-    </div>
-  </div>
-</section>
-
+<!-- Chapter 4: 결과 (원본 AFTER 섹션) -->
 <section class="after-section">
   <div class="container">
-    <span class="badge">AFTER</span>
-    <h2>이제는 한 흐름으로</h2>
-    <p class="sub">한 화면 · 한 흐름 · 자동</p>
+    <span class="badge">결과</span>
+    <h2>8단계·30분+ → 4단계·5분</h2>
+    <p class="sub">도구 5개 → 1개 · 한 화면 안에서</p>
 
     <div class="ba-grid">
       <div class="ba-card">
         <h3>BEFORE</h3>
         <ol>
           <li>노션에 보낼 사람 정리</li>
-          <li>ChatGPT로 알림톡 초안</li>
+          <li>Claude로 알림톡 초안</li>
           <li>카카오 규칙 매번 검색</li>
           <li>솔라피 화면에서 변수 입력·등록</li>
           <li>검수 통과될 때까지 수동 확인</li>
@@ -191,7 +366,7 @@
           <li>실패한 사람 솔라피에서 또 확인</li>
           <li>노션에 결과 손으로 다시 적기</li>
         </ol>
-        <div class="summary">8단계 · 도구 5개+ · <span class="todo" style="background:#666;color:#fff;">평균 시간 보충</span></div>
+        <div class="summary">8단계 · 도구 5개+ · 30분+/회</div>
       </div>
 
       <div class="ba-arrow">→</div>
@@ -204,7 +379,7 @@
           <li>발송 화면 5단계 → [발송하기]</li>
           <li>노션은 자동으로 결과 정리</li>
         </ol>
-        <div class="summary">4단계 · 도구 1개 · <span class="todo">평균 시간 보충</span></div>
+        <div class="summary">4단계 · 도구 1개 · 5분/회</div>
       </div>
     </div>
 
@@ -216,7 +391,7 @@
   </div>
 </section>
 
-<footer>todoto alimtalk · case study · 2026-05-12</footer>
+<footer>todoto alimtalk · 플로우차트 시안 · 2026-05-13</footer>
 
 </body>
 </html>
